@@ -55,7 +55,7 @@ gulp.task("watch", function () {
 });
 
 gulp.task(
-	"default",
+	"build",
 	gulp.series(
 		"clean",
 		gulp.parallel("sass", "html", "images"),
