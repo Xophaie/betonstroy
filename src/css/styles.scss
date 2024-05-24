@@ -1,5 +1,7 @@
 @import "../css/_fonts.scss";
 
+// *********************** Переменные ***********************
+
 $black: #000;
 $placeholder-black: #010101;
 $white: #fff;
@@ -14,141 +16,697 @@ $orange: #df650b;
 $gold: #ffa600;
 $red: #ff3030;
 
+// Шрифт
+
 * {
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
 	box-sizing: border-box;
-	z-index: 1;
 }
-.bar {
-	width: 100%;
-	height: 1px;
+
+body {
 	background-color: $light-gray;
-	z-index: 10;
-
-	&-margins {
-		margin: 15px 0;
-	}
 }
 
-// Навигация
-.navigation {
-	position: fixed;
-	top: 0;
-	background-color: $white;
-	height: 55px;
-	width: 100vw;
-	padding: 0 11px;
-	overflow-x: hidden;
+// *********************** Стили ***********************
 
-	&__header {
-		height: 55px;
+// Навигационная панель
+.navbar {
+	background-color: $white !important;
+
+	// Для бургера
+	.hb {
+		width: 30px;
+		margin: 0 auto;
+		display: block;
+	}
+
+	// Сброс стилей кнопки меню из бутстрапа
+	&-toggler {
+		background-color: $white;
+		border: none;
+	}
+
+	// Лого
+	&-brand img {
+		width: 64px;
+		height: 60px;
+	}
+
+	// Контакты
+	&__contacts div a {
+		text-decoration: none;
+		color: $dark-blue;
+		font-size: 0.8rem;
+
+		&:hover {
+			color: $light-blue;
+		}
+	}
+
+	// Соцсети
+	&__socials {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+		& a {
+			text-decoration: none;
+
+			& svg {
+				width: 1.7rem;
+				height: 1.7rem;
+
+				& path {
+					transition: fill 0.4s;
+				}
+			}
+
+			&[id="vk"]:hover {
+				& svg path {
+					fill: #4c75a3;
+				}
+			}
+
+			&[id="tg"]:hover {
+				& svg path {
+					fill: #29b6f6;
+				}
+			}
+
+			&[id="yt"]:hover {
+				& svg path {
+					fill: #ff0000;
+				}
+			}
+
+			&[id="inst"]:hover {
+				& svg path {
+					fill: url("#inst-gradient");
+				}
+			}
+		}
+	}
+
+	.nav-item,
+	.nav-link,
+	.dropdown-item {
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		color: $dark-blue !important;
+		font-weight: bold;
+
+		&:hover {
+			color: $light-blue !important;
+		}
+
+		&:active {
+			background-color: $white;
+		}
+	}
+
+	.row {
+		gap: 26px;
 		align-items: center;
 	}
 
-	&__menu {
+	& .btn {
+		width: fit-content;
+		margin-right: 10px;
+	}
+}
+
+// Шапка
+.header {
+	padding: 250px 70px;
+	background-image: url("../img/header-bg-blur.avif");
+
+	color: $white;
+	background-size: cover;
+
+	& .row {
+		flex-wrap: nowrap;
+		gap: 50px;
+
+		& .col-xxl-8 {
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
+		}
+
+		& .col-xxl-4 {
+			height: 100%;
+			margin: auto 0;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		line-height: 110%;
+		font-size: 3.4rem;
+		margin: 25px 0;
+	}
+
+	&__text {
+		font-size: 1.75rem;
+		font-weight: normal;
+		line-height: 130%;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+
+		& input::placeholder {
+			color: $dark-gray;
+		}
+
+		& .form__button {
+			padding: 12px 24px;
+			text-align: center;
+			margin: 5px 0;
+			width: 100%;
+			height: 50px;
+		}
+	}
+}
+
+// Инструкция
+.instruction {
+	padding: 65px 350px;
+	background-color: $white;
+
+	& .col-12 {
+		text-align: center;
+		justify-content: center;
+		gap: 30px;
+
+		& .btn {
+			font-size: 1.12rem;
+			margin-top: 20px;
+			width: fit-content;
+		}
+	}
+
+	&__text {
+		& p {
+			font-size: 1.7rem;
+			line-height: 120%;
+			font-weight: 500;
+			color: $dark-blue;
+		}
+	}
+}
+
+// Продукты
+.products {
+	padding: 80px 135px;
+
+	background-image: url("../img/products-bg-blur.avif");
+	background-size: cover;
+
+	& .row {
+		display: flex;
+
+		gap: 30px;
+
+		& article {
+			flex: 1;
+		}
+	}
+}
+
+// Консультация
+.consulting {
+	padding: 125px 0;
+
+	background: url("../img/consulting-bg.png") no-repeat;
+
+	background-size: 100% 100%;
+
+	& .row {
+		align-items: center;
+	}
+
+	&__desc {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		justify-content: space-between;
+	}
+
+	&__title {
+		font-size: 2.5rem;
+		color: $dark-blue;
+		font-weight: 500;
+		line-height: 110%;
+	}
+
+	&__text {
+		color: $dark-blue;
+		font-size: 1.6rem;
+		font-weight: 300;
+		line-height: 130%;
+	}
+
+	&__warning {
+		margin-top: auto;
+		font-size: 0.9rem;
+		font-weight: 300;
+		line-height: 130%;
+
+		display: block;
+
+		& a {
+			color: $black;
+
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
+
+	& .form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 25px;
+
+		&__text {
+			display: none;
+		}
+
+		&__control {
+			// margin: 0;
+			// padding: 0;
+			// width: auto;
+			height: 50px;
+
+			position: relative;
+			& input {
+				height: auto;
+				background-color: $light-gray;
+			}
+		}
+
+		&__purpose {
+			grid-column: 1 / 3;
+		}
+
+		& button {
+			grid-column: 1 / 3;
+		}
+	}
+}
+
+// Ознакомление с производством
+.introduction {
+	padding: 75px 0;
+	color: $dark-blue;
+	background-color: $white;
+
+	& .col-lg-5 {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	&__title {
+		font-size: 2.2rem;
+		font-weight: 400;
+	}
+
+	&__descr {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		justify-content: space-between;
+	}
+
+	&__label {
+		font-weight: 300;
+		font-size: 0.9rem;
+		line-height: 130%;
+	}
+
+	&__mission {
+		font-weight: 300;
+		font-size: 1.1rem;
+		line-height: 140%;
+		margin: 0;
+	}
+
+	&__button {
+		width: fit-content !important;
+	}
+}
+
+// Преимущества
+.advantages {
+	padding: 20px 135px 80px 135px;
+
+	background-color: $white;
+
+	& .container {
+		display: flex;
+		flex-direction: column;
+
+		gap: 50px;
+	}
+
+	&__title {
+		text-align: center;
+		margin: 0;
+		font-weight: 700;
+		font-size: 2.8rem;
+		line-height: 110%;
+
+		color: #194f76;
+	}
+
+	& .row {
+		display: flex;
+
+		flex-wrap: wrap;
+
+		gap: 30px;
+
+		& article {
+			flex: 1 0 270px;
+		}
+	}
+	& .card {
+		border-radius: 10px;
+		padding: 50px 50px;
+		text-align: center;
+
+		gap: 10px;
+
+		&__desc {
+			gap: 20px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__title {
+			font-weight: 500;
+			font-size: 1.8rem;
+			margin: 0;
+		}
+
+		&__text-header {
+			font-size: 1.2rem;
+		}
+
+		&__list-item {
+			font-weight: 300;
+			font-size: 1.2rem;
+			line-height: 140%;
+
+			&::marker {
+				font-size: 1rem;
+			}
+		}
+
+		&__img img {
+			width: 100px;
+			height: 100px;
+		}
+	}
+}
+
+// Характеристики
+.characteristics {
+	padding: 20px 135px 80px 135px;
+
+	background-color: $white;
+
+	& .row {
+		display: flex;
+		flex-direction: row;
+		gap: 30px;
+		justify-content: space-evenly;
+	}
+
+	&__item {
+		text-align: center;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		width: fit-content !important;
+		gap: 20px;
+	}
+
+	&__number {
+		font-family: "Cuprum", sans-serif;
+		font-weight: 700;
+		font-size: 3.5rem;
+		line-height: 110%;
+
+		color: $dark-blue;
+	}
+
+	&__divider {
+		width: 100%;
+		height: 2px;
+		background-color: $orange;
+	}
+
+	&__desc {
+		font-weight: 300;
+		font-size: 1.3rem;
+		line-height: 140%;
+
+		color: #194f76;
+	}
+}
+
+// Документы
+.documents {
+	background-color: $white;
+
+	display: flex;
+	flex-direction: column;
+
+	gap: 50px;
+
+	& .zoom {
 		position: fixed;
-		background-color: $white;
-		top: 50px;
-		z-index: 999;
+		z-index: 9999999999;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
 		height: 100%;
+		background-color: #000000b1;
 
-		& > div:first-child {
-			margin-top: 15px;
-		}
-	}
-
-	&__logo {
 		& img {
-			width: 39px;
+			transition: all 0.3s;
+			transform: scaleX(1.5) scaleY(1.4);
 		}
 	}
 
-	&__open-button {
-		text-align: right;
-		cursor: pointer;
+	&__title {
+		text-align: center;
+		margin: 0;
+		font-weight: 700;
+		font-size: 2.8rem;
+		line-height: 110%;
+
+		color: #194f76;
 	}
 
-	&__list {
+	& .wrapper {
+		padding: 100px 135px 100px 135px;
+		background-image: url("../img/products-bg-blur.avif");
+		background-size: cover;
+
+		// width: 100%;
+	}
+
+	& .container {
+		display: flex;
+		flex-direction: column;
+
+		gap: 50px;
+	}
+
+	& .row {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+
+		gap: 30px;
+	}
+	&__item {
+		position: relative;
+
+		&:not(.zoom) {
+			&:hover {
+				cursor: zoom-in;
+
+				&::before {
+					content: url("../img/icons/Zoom.png");
+					position: absolute;
+					z-index: 11;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%) scale(0.5);
+				}
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					z-index: 10;
+					background: linear-gradient(rgba(25, 79, 118, 0.4));
+				}
+			}
+		}
+
+		&.zoom {
+			& img:hover {
+				cursor: zoom-in;
+			}
+		}
+	}
+
+	&__img {
+		width: 370px;
+		height: 522px;
+	}
+}
+
+// *********************** Утилиты/Блоки ***********************
+
+// Скейл
+.scale {
+	transition: all 0.3s;
+	transform: scale(2) translateY(10%) !important;
+}
+
+// Карточки
+.card {
+	display: flex;
+	flex-direction: column;
+
+	color: $white;
+	background-color: $dark-blue;
+
+	text-align: center;
+
+	&__desc {
+		text-align: center;
+
+		& h2 {
+			text-transform: uppercase;
+			font-size: 2.25rem;
+			line-height: 120%;
+			font-weight: 700;
+		}
+
+		& p {
+			font-weight: 400;
+			font-size: 1rem;
+			line-height: 140%;
+		}
+	}
+
+	&__img img {
+		width: 100%;
+	}
+
+	&__body {
+		padding: 20px;
+		height: 100%;
+
 		display: flex;
 		flex-direction: column;
 	}
 
-	&__item {
-		& a {
-			color: $dark-blue;
-			text-decoration: none;
-			text-transform: uppercase;
-			font-weight: bold;
+	&__btns {
+		display: flex;
+		flex-direction: column;
+		margin-top: auto;
+
+		gap: 10px;
+
+		& button {
+			font-size: 0.8rem;
 		}
 	}
+}
 
-	&__contacts {
-		font-size: 22px;
-		font-weight: 500;
+// Форма
+.form {
+	padding: 45px 50px;
+	background-color: $dark-blue;
+	border-radius: 10px;
+	// width: 350px;
+
+	&__input {
+		padding: 15px 16px;
+		width: 100%;
+
+		border-radius: 8px;
+		border: none;
+	}
+
+	&__text {
+		font-weight: 300;
+		font-size: 0.8rem;
+		line-height: 130%;
 		text-align: center;
+		color: $white;
+		margin-bottom: 0;
+
+		& a {
+			color: $white;
+			text-decoration: underline;
+
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
+}
+
+// Акция
+.promo {
+	background-color: $orange;
+	color: $white;
+
+	width: fit-content;
+
+	padding: 10px 20px;
+	border-radius: 12px;
+
+	&__title {
+		font-weight: 700;
+		line-height: 120%;
+		font-size: 1.8rem;
+	}
+
+	&__desc {
+		font-size: 0.8rem;
+		font-weight: 300;
 	}
 }
 
 // Кнопки
-.menu-toggle {
-	position: absolute;
-	right: 1.5rem;
-	top: 49%;
-	transform: translate(0, -50%);
-	height: 26px;
-	width: 29px;
-
-	&,
-	&:hover {
-		color: #000;
-	}
-}
-
-.menu-toggle-bar {
-	display: block;
-	position: absolute;
-	top: 50%;
-	margin-top: -1px;
-	right: 0;
-	width: 100%;
-	height: 2px;
-	border-radius: 1px;
-	background-color: black;
-	transition: all 0.3s ease;
-
-	&.menu-toggle-bar--top {
-		transform: translate(0, -8px);
-	}
-	&.menu-toggle-bar--bottom {
-		transform: translate(0, 8px);
-	}
-}
-
-.menu-toggle {
-	&.open {
-		.menu-toggle-bar--top {
-			transform: translate(0, 0) rotate(45deg);
-		}
-		.menu-toggle-bar--middle {
-			opacity: 0;
-		}
-		.menu-toggle-bar--bottom {
-			transform: translate(0, 0) rotate(-45deg);
-		}
-	}
-}
-
-.button {
+.btn {
 	display: inline-block;
 	padding: 12px 24px;
 
-	font-family: "Roboto";
 	font-style: normal;
 	font-weight: 700;
-	font-size: 16px;
+	font-size: 1rem;
 	line-height: 100%;
+	width: 100%;
 
 	border: none;
 	border-radius: 8px;
@@ -158,7 +716,660 @@ $red: #ff3030;
 		background-color: $orange;
 
 		&:hover {
-			background-color: $gold;
+			background-color: $gold !important;
+		}
+	}
+
+	&-secondary {
+		background-color: transparent;
+		border: 1px $orange solid;
+		color: $orange;
+	}
+}
+
+// *********************** Медиа запросы ***********************
+
+@media screen and (max-width: 1330px) {
+	html {
+		font-size: 14px;
+	}
+
+	.navbar {
+		&-brand img {
+			height: 56px;
+			width: 52px;
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	html {
+		font-size: 11px;
+	}
+
+	.products,
+	.advantages {
+		padding: 80px 135px 30px 135px;
+		background-size: cover;
+
+		& .row {
+			display: grid;
+
+			grid-template-columns: 1fr 1fr;
+
+			gap: 30px;
+
+			& article {
+				display: grid;
+
+				&:nth-child(odd):last-child {
+					grid-column: 1/-1;
+				}
+			}
+		}
+
+		&__card {
+			margin-bottom: 50px;
+
+			& .card__btns .btn {
+				font-size: 1.3rem;
+			}
+		}
+	}
+
+	.navbar {
+		& .collapse ul a {
+			font-size: 0.9rem;
+		}
+
+		&-brand img {
+			height: 50px;
+			width: 46px;
+		}
+
+		&__contacts div a {
+			font-size: 1rem;
+		}
+
+		&__socials a svg {
+			width: 21px;
+			height: 21px;
+		}
+
+		& button {
+			font-size: 1.1rem;
+		}
+	}
+
+	.header {
+		padding-top: 100px;
+		padding-bottom: 100px;
+
+		& form {
+			& button {
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	.instruction {
+		padding: 30px 125px;
+
+		&__text {
+			font-size: 1.5rem;
+		}
+	}
+
+	.consulting {
+		padding: 35px 200px;
+
+		&__title {
+			font-size: 2.5rem;
+		}
+
+		&__text {
+			font-size: 1.8rem;
+		}
+
+		&__warning {
+			display: none;
+		}
+
+		&__desc {
+			text-align: center;
+		}
+
+		& .form {
+			margin-top: 15px;
+			& input {
+				font-size: 1.3rem;
+			}
+
+			& button {
+				font-size: 1.5rem;
+			}
+
+			&__text {
+				display: block;
+				font-size: 1.2rem;
+
+				grid-column: 1 / 3;
+			}
+		}
+	}
+
+	.introduction {
+		&__title {
+			font-size: 2.7rem;
+			line-height: 100%;
+		}
+
+		&__descr {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			justify-content: space-between;
+		}
+
+		&__label {
+			font-size: 1.3rem;
+			line-height: 130%;
+		}
+
+		&__mission {
+			font-size: 1.5rem;
+			line-height: 130%;
+			margin: 0;
+		}
+
+		&__button {
+			font-size: 1.4rem;
+		}
+
+		&__video {
+			width: 560px;
+			height: 320px;
+		}
+	}
+
+	.advantages {
+		& .card {
+			padding: 30px 0px;
+
+			&__title {
+				font-size: 2.3rem;
+			}
+
+			&__text-header {
+				font-size: 1.7rem;
+			}
+
+			&__list-item {
+				font-size: 1.7rem;
+
+				&::marker {
+					font-size: 1.3rem;
+				}
+			}
+
+			&__img img {
+				width: 110px;
+				height: 110px;
+			}
+		}
+	}
+
+	.characteristics {
+		padding: 20px 135px 80px 135px;
+
+		&__number {
+			font-size: 4rem;
+		}
+
+		&__desc {
+			font-size: 1.6rem;
+		}
+	}
+
+	.documents {
+		& .wrapper {
+			padding: 80px 80px 80px 80px;
+		}
+	}
+}
+
+@media screen and (max-width: 990px) {
+	html {
+		font-size: 16px;
+	}
+
+	.navbar {
+		& .dropdown-divider {
+			display: block !important;
+			margin: 3px 0;
+		}
+
+		.dropdown-menu {
+			border: none;
+		}
+
+		.dropdown-toggle {
+			position: relative;
+			&::after {
+				position: absolute;
+				right: 20px;
+				top: 50%;
+				margin-top: -5px;
+			}
+		}
+		& .collapse {
+			height: 100vh;
+		}
+
+		&__contacts div a {
+			font-size: 1.4rem;
+		}
+
+		&__socials {
+			& a svg {
+				width: 2rem;
+				height: 2rem;
+			}
+		}
+
+		& .row .btn {
+			width: auto;
+			margin-left: 10px;
+		}
+
+		& .row {
+			flex-direction: column;
+		}
+	}
+
+	.header {
+		padding: 50px 0;
+
+		& .row {
+			flex-wrap: wrap;
+		}
+
+		&__title {
+			margin: 25px 0;
+			font-size: 2rem;
+		}
+
+		&__text {
+			font-size: 1.1rem;
+		}
+
+		& .promo {
+			&__title {
+				font-size: 1.6rem;
+			}
+
+			&__desc {
+				font-size: 0.87rem;
+			}
+		}
+
+		& .form {
+			& .btn {
+				font-size: 0.9rem;
+				padding: 0;
+				line-height: 100%;
+			}
+		}
+
+		& .form__text {
+			font-size: 0.87rem;
+		}
+	}
+
+	.products,
+	.advantages {
+		padding: 30px 40px;
+		& .card {
+			&__btns .btn {
+				font-size: 1rem;
+			}
+		}
+	}
+
+	.consulting {
+		padding: 35px 30px;
+
+		&__title {
+			font-size: 2rem;
+		}
+
+		&__text {
+			font-size: 1.4rem;
+		}
+
+		& .form {
+			& input::placeholder {
+				font-size: 1rem;
+			}
+
+			& .btn {
+				font-size: 1.4rem;
+			}
+
+			&__text {
+				font-size: 0.8rem;
+			}
+		}
+	}
+
+	.introduction {
+		& .row {
+			gap: 50px;
+		}
+
+		&__title {
+			font-size: 2.2rem;
+		}
+
+		&__label {
+			font-size: 0.9rem;
+		}
+
+		&__mission {
+			font-size: 1.2rem;
+		}
+
+		&__button {
+			font-size: 1.2rem;
+			width: 100% !important;
+			height: 60px;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		&__video {
+			width: 100%;
+			height: 320px;
+		}
+	}
+
+	.advantages {
+		& .card {
+			padding: 50px 50px;
+
+			&__title {
+				font-size: 1.8rem;
+			}
+
+			&__text-header {
+				font-size: 1.2rem;
+			}
+
+			&__list-item {
+				font-size: 1.2rem;
+
+				&::marker {
+					font-size: 1rem;
+				}
+			}
+
+			&__img img {
+				width: 110px;
+				height: 110px;
+			}
+		}
+	}
+
+	.documents {
+		& .wrapper {
+			padding: 80px 40px 80px 40px;
+		}
+
+		&__img {
+			width: 300px;
+			height: 452px;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.instruction {
+		padding: 30px;
+	}
+
+	.products,
+	.advantages {
+		background-image: none;
+		background-color: $white;
+
+		padding-top: 10px;
+
+		& .row {
+			grid-template-columns: 1fr;
+
+			gap: 30px;
+		}
+
+		& .card {
+			margin-bottom: 10px;
+			border: none;
+
+			&:last-child {
+				// margin-bottom: 48px;
+			}
+		}
+	}
+
+	.consulting {
+		// background-image: url("../img/consulting-bg-mobile.png");
+		background: url("../img/consulting-bg-mobile.png") center center no-repeat;
+		background-size: cover;
+	}
+
+	.advantages {
+		& .card {
+			&__text-header {
+				margin-bottom: 10px;
+			}
+			&__text {
+				text-align: left;
+			}
+		}
+	}
+
+	.characteristics {
+		padding: 20px 25px 80px 25px;
+
+		background-color: $white;
+
+		& .row {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+			justify-content: space-evenly;
+		}
+
+		&__item {
+			text-align: center;
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			width: fit-content !important;
+			gap: 20px;
+		}
+
+		&__number {
+			font-family: "Cuprum", sans-serif;
+			font-weight: 700;
+			font-size: 3.5rem;
+			line-height: 110%;
+
+			color: $dark-blue;
+		}
+
+		&__divider {
+			width: 100%;
+			height: 2px;
+			background-color: $orange;
+		}
+
+		&__desc {
+			font-weight: 300;
+			font-size: 1.3rem;
+			line-height: 140%;
+
+			color: #194f76;
+		}
+	}
+
+	.documents {
+		&__title {
+			font-size: 2.2rem;
+		}
+
+		&__img {
+			width: 250px;
+			height: 402px;
+		}
+	}
+}
+
+@media screen and (max-width: 595px) {
+	.navbar {
+		& .row .btn {
+			width: 96%;
+			margin-left: 10px;
+		}
+	}
+
+	.instruction {
+		padding: 40px 10px;
+
+		&__text p {
+			font-size: 1.4rem;
+		}
+
+		& .btn {
+			font-size: 1.12rem;
+			margin-top: 20px;
+			width: auto;
+		}
+	}
+
+	.products,
+	.advantages {
+		padding: 0 10px;
+	}
+
+	.consulting {
+		& .form {
+			display: flex;
+			grid-template-columns: 1fr;
+			gap: 5px;
+
+			flex-wrap: wrap;
+
+			&__text {
+				display: none;
+			}
+
+			padding: 30px auto;
+
+			& input {
+				padding: 5px;
+
+				&::placeholder {
+					font-size: 0.75rem;
+				}
+			}
+
+			&__purpose {
+				grid-column: 1;
+			}
+
+			& .btn {
+				padding: 5px 8px;
+				grid-column: 1;
+				font-size: 0.9rem;
+			}
+
+			&__text {
+				display: block;
+				grid-column: 1;
+				text-align: left;
+			}
+		}
+	}
+
+	.introduction {
+		&__title {
+			font-size: 1.8rem;
+			text-align: center;
+			font-weight: 700;
+			margin-bottom: 30px;
+		}
+
+		&__label {
+			font-size: 0.8rem;
+		}
+
+		&__mission {
+			font-size: 1rem;
+		}
+	}
+
+	.documents {
+		& .wrapper {
+			padding: 80px 0 80px 0;
+		}
+
+		& .row {
+			gap: 10px;
+		}
+
+		&__img {
+			width: 211px;
+			height: 352px;
+		}
+	}
+}
+
+@media screen and (max-width: 430px) {
+	.consulting {
+		&__text {
+			font-size: 1.3rem;
+		}
+	}
+
+	.documents {
+		& .wrapper {
+			padding: 60px 10px 60px 10px;
+		}
+
+		& .row {
+			justify-content: space-between;
+		}
+
+		&__img {
+			width: 170px;
+			height: 227px;
+		}
+	}
+}
+
+@media screen and (max-width: 370px) {
+	.consulting {
+		& .form .btn {
+			font-size: 0.6rem;
+		}
+	}
+
+	.documents {
+		&__img {
+			width: 140px;
+			height: 197px;
 		}
 	}
 }
