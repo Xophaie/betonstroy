@@ -1,4 +1,4 @@
-import { $, jQuery } from "jquery";
+import { $, jQuery } from "./jquery.min.js";
 
 $(document).ready(function () {
 	$(".input-phone")
