@@ -1,9 +1,9 @@
 $(document).ready(function () {
-	const API_KEY = "2dd8f4e7-5d76-468a-9fad-c904f7a814b7";
+	$(".navbar-toggler").on("click", function () {
+		$("body").toggleClass("modal-open");
+	});
 
 	// Cleave
-	const $window = $(window);
-	const $feedbackSwiperDOM = $(".feedback .swiper");
 
 	$(".input-phone")
 		.toArray()
@@ -34,8 +34,6 @@ $(document).ready(function () {
 			e.target.classList.toggle("scale");
 		}
 	});
-
-	// Слайдеры
 
 	// Обзор
 	const overviewSwiper = new Swiper(".overview__swiper", {
@@ -154,6 +152,7 @@ $(document).ready(function () {
 				"src",
 				"//i.ytimg.com/vi/ID/hqdefault.jpg".replace("ID", videoId)
 			);
+			$thumbNode.attr("alt", "Бетон Строй на Ютуб>");
 			$div.append($thumbNode);
 			let $playButton = $("<div></div>");
 			$playButton.attr("class", "play");
@@ -166,4 +165,8 @@ $(document).ready(function () {
 	}
 
 	initYouTubeVideos();
+
+	// Копирайт
+	let year = new Date().getFullYear();
+	$("#year").text(year);
 });

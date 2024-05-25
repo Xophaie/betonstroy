@@ -67,7 +67,6 @@
 	padding: 45px 50px;
 	background-color: $dark-blue;
 	border-radius: 10px;
-	// width: 350px;
 
 	&__input {
 		padding: 15px 16px;
@@ -207,8 +206,15 @@
 		background-color: transparent;
 		border: 1px $orange solid;
 		color: $orange;
+
+		&:hover {
+			background-color: $gold;
+			color: $white;
+		}
 	}
 }
+
+// Оптимизированное ютуб-видео
 
 .youtube-player {
 	position: relative;

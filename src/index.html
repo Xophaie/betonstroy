@@ -3,7 +3,21 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="title" content="Бетон Строй" />
+		<meta
+			name="description"
+			content="«Бетон Строй» — бетонные заводы полного циклаМы уже более 12 лет производим качественный бетон и поставляем его по Московской области."
+		/>
+		<meta
+			name="keywords"
+			content="бетон, щебень, песок, доставка, производство, завод, "
+		/>
+		<meta name="robots" content="index, follow" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="language" content="Russian" />
+
 		<title>Бетон Строй</title>
+
 		<link href="./css/libs/swiper-bundle.min.css" rel="stylesheet" />
 		<link href="./css/libs/bootstrap.min.css" rel="stylesheet" />
 		<link href="./css/styles.css" rel="stylesheet" />
@@ -591,12 +605,14 @@
 								<div class="card__text">
 									<h3 class="card__text-header">Наши козыри:</h3>
 
-									<li class="card__list-item">12 лет на рынке</li>
-									<li class="card__list-item">Сами производим бетон</li>
-									<li class="card__list-item">
-										Работаем как с крупными, так и с частными клиентами
-									</li>
-									<li class="card__list-item">Боремся с перекупами</li>
+									<menu class="card__list">
+										<li class="card__list-item">12 лет на рынке</li>
+										<li class="card__list-item">Сами производим бетон</li>
+										<li class="card__list-item">
+											Работаем как с крупными, так и с частными клиентами
+										</li>
+										<li class="card__list-item">Боремся с перекупами</li>
+									</menu>
 								</div>
 							</div>
 						</div>
@@ -616,13 +632,15 @@
 							<div class="card__desc">
 								<h2 class="card__title">Деньги</h2>
 								<div class="card__text">
-									<li class="card__list-item">
-										Мы поставляем бетон высокого качества по достойной цене
-									</li>
-									<li class="card__list-item">Не ведём теневого бизнеса</li>
-									<li class="card__list-item">
-										Оформляем все крупные сделки документально
-									</li>
+									<menu class="card__list">
+										<li class="card__list-item">
+											Мы поставляем бетон высокого качества по достойной цене
+										</li>
+										<li class="card__list-item">Не ведём теневого бизнеса</li>
+										<li class="card__list-item">
+											Оформляем все крупные сделки документально
+										</li>
+									</menu>
 								</div>
 							</div>
 						</div>
@@ -643,12 +661,13 @@
 								<h2 class="card__title">Три завода</h2>
 								<div class="card__text">
 									<h3 class="card__text-header">В нашем распоряжении:</h3>
-
-									<li class="card__list-item">3 завода на территории МО</li>
-									<li class="card__list-item">
-										Свой автопарк для поставок неограниченного объёма по всему
-										региону
-									</li>
+									<menu class="card__list">
+										<li class="card__list-item">3 завода на территории МО</li>
+										<li class="card__list-item">
+											Свой автопарк для поставок неограниченного объёма по всему
+											региону
+										</li>
+									</menu>
 								</div>
 							</div>
 						</div>
@@ -1067,19 +1086,43 @@
 
 		<!-- Футер -->
 		<footer class="footer">
-			<p class="footer__copyright">©2009—2022 Бетон Строй</p>
-			<div class="footer__links">
-				<a href="#" class="footer__link">Наши продукты</a>
-				<a href="#" class="footer__link">Услуги</a>
-				<a href="#" class="footer__link">О компании</a>
-				<a href="#" class="footer__link">Контакты</a>
+			<div class="container">
+				<p class="footer__copyright">
+					&copy; 2009-<span id="year">2022</span> Бетон Строй
+				</p>
+
+				<div class="footer__links">
+					<a href="#" class="footer__link">Наши продукты</a>
+					<a href="#" class="footer__link">Услуги</a>
+					<a href="#" class="footer__link">О компании</a>
+					<a href="#" class="footer__link">Контакты</a>
+				</div>
+
+				<a href="#" class="to-top">
+					Вернуться в начало
+
+					<svg
+						width="16"
+						height="9"
+						viewBox="0 0 16 9"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M2 8.00049L8.13899 2.0661L14.4095 7.73198"
+							stroke="white"
+							stroke-opacity="0.9"
+							stroke-width="3"
+						/>
+					</svg>
+				</a>
 			</div>
 		</footer>
 
 		<script src="https://api-maps.yandex.ru/2.1/?apikey=2dd8f4e7-5d76-468a-9fad-c904f7a814b7&lang=ru_RU"></script>
 		<script src="./js/libs/jquery.min.js"></script>
 		<script src="./js/libs/swiper-bundle.min.js"></script>
-		<script src="./js/libs/bootstrap.bundle.min.js"></script>
+		<script src="./js/libs/bootstrap.min.js"></script>
 		<script src="./js/libs/cleave.min.js"></script>
 		<script src="./js/libs/cleave-phone.ru.js"></script>
 		<script type="module" src="./js/script.js"></script>

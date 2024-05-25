@@ -430,6 +430,10 @@ body {
 .advantages .card__text-header {
   font-size: 1.2rem;
 }
+.advantages .card__list {
+  margin: 0;
+  padding: 0;
+}
 .advantages .card__list-item {
   font-weight: 300;
   font-size: 1.2rem;
@@ -833,11 +837,62 @@ body {
   color: #df650b;
 }
 .factories__map {
-  width: 100%;
+  width: 99.9%;
   height: 70vh;
   background-color: #ece9e9;
   margin: 0;
   padding: 0;
+}
+
+.footer {
+  background-color: #87cef5;
+  padding: 17px 0;
+  color: #fff;
+}
+.footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+}
+.footer__copyright {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 140%;
+}
+.footer a {
+  color: #fff;
+}
+.footer__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 37px;
+}
+.footer__link {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 120%;
+  text-transform: uppercase;
+}
+.footer .to-top {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 140%;
+  text-decoration: none;
+}
+.footer .to-top:hover {
+  color: #ece9e9;
+}
+.footer .to-top:hover svg path {
+  stroke: #ece9e9;
 }
 
 .error {
@@ -1027,6 +1082,10 @@ body {
   border: 1px #df650b solid;
   color: #df650b;
 }
+.btn-secondary:hover {
+  background-color: #ffa600;
+  color: #fff;
+}
 
 .youtube-player {
   position: relative;
@@ -1101,7 +1160,7 @@ body {
 }
 @media screen and (max-width: 1200px) {
   html {
-    font-size: 11px;
+    font-size: 13px;
   }
   .products,
   .advantages {
@@ -1129,66 +1188,30 @@ body {
   .advantages__card {
     margin-bottom: 50px;
   }
-  .products__card .card__btns .btn,
-  .advantages__card .card__btns .btn {
-    font-size: 1.3rem;
+  .navbar .row {
+    gap: 15px;
   }
   .navbar .collapse ul a {
-    font-size: 0.95rem;
+    padding: 0;
+    font-size: 0.8rem;
   }
   .navbar-brand img {
     height: 50px;
     width: 46px;
   }
-  .navbar__contacts div a {
-    font-size: 1rem;
-  }
   .navbar__socials a svg {
     width: 21px;
     height: 21px;
-  }
-  .navbar button {
-    font-size: 1.1rem;
   }
   .header {
     padding-top: 100px;
     padding-bottom: 100px;
   }
-  .header .promo__desc {
-    font-size: 1.2rem;
-  }
-  .header form button {
-    font-size: 1.5rem;
-  }
-  .header form input::-webkit-input-placeholder {
-    font-size: 1.3rem;
-  }
-  .header form input::-moz-placeholder {
-    font-size: 1.3rem;
-  }
-  .header form input:-ms-input-placeholder {
-    font-size: 1.3rem;
-  }
-  .header form input::-ms-input-placeholder {
-    font-size: 1.3rem;
-  }
-  .header form input::placeholder {
-    font-size: 1.3rem;
-  }
   .instruction {
     padding: 30px 125px;
   }
-  .instruction__text {
-    font-size: 1.5rem;
-  }
   .consulting {
     padding: 35px 200px;
-  }
-  .consulting__title {
-    font-size: 2.5rem;
-  }
-  .consulting__text {
-    font-size: 1.8rem;
   }
   .consulting__warning {
     display: none;
@@ -1199,22 +1222,11 @@ body {
   .consulting .form {
     margin-top: 15px;
   }
-  .consulting .form input {
-    font-size: 1.3rem;
-  }
-  .consulting .form button {
-    font-size: 1.5rem;
-  }
   .consulting .form__text {
     display: block;
-    font-size: 1.2rem;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-column: 1/3;
-  }
-  .introduction__title {
-    font-size: 2.7rem;
-    line-height: 100%;
   }
   .introduction__descr {
     display: -webkit-box;
@@ -1229,36 +1241,12 @@ body {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .introduction__label {
-    font-size: 1.3rem;
-    line-height: 130%;
-  }
-  .introduction__mission {
-    font-size: 1.5rem;
-    line-height: 130%;
-    margin: 0;
-  }
-  .introduction__button {
-    font-size: 1.4rem;
-  }
   .introduction__video {
     width: 560px;
     height: 320px;
   }
   .advantages .card {
     padding: 30px 0px;
-  }
-  .advantages .card__title {
-    font-size: 2.3rem;
-  }
-  .advantages .card__text-header {
-    font-size: 1.7rem;
-  }
-  .advantages .card__list-item {
-    font-size: 1.7rem;
-  }
-  .advantages .card__list-item::marker {
-    font-size: 1.3rem;
   }
   .advantages .card__img img {
     width: 110px;
@@ -1354,7 +1342,7 @@ body {
 }
 @media screen and (max-width: 990px) {
   html {
-    font-size: 16px;
+    font-size: 12px;
   }
   .navbar .dropdown-divider {
     display: block !important;
@@ -1375,18 +1363,24 @@ body {
   .navbar .collapse {
     height: 100vh;
   }
+  .navbar .collapse ul a {
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
   .navbar__contacts div a {
     font-size: 1.4rem;
   }
   .navbar__socials a svg {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
   .navbar .row .btn {
     width: auto;
     margin-left: 10px;
   }
   .navbar .row {
+    gap: 30px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1401,7 +1395,6 @@ body {
   }
   .header__title {
     margin: 25px 0;
-    font-size: 2rem;
   }
   .header__text {
     font-size: 1.1rem;
@@ -1595,6 +1588,18 @@ body {
   .factories__factory-route {
     font-size: 1.8rem;
   }
+  .footer__links {
+    gap: 10px;
+  }
+  .footer__links a {
+    font-size: 1.2rem;
+  }
+  .footer__copyright {
+    font-size: 0.9rem;
+  }
+  .footer .to-top {
+    font-size: 0.9rem;
+  }
 }
 @media screen and (max-width: 767px) {
   .instruction {
@@ -1623,12 +1628,13 @@ body {
   }
   .advantages .card__text-header {
     margin-bottom: 10px;
+    font-size: 1.4rem;
   }
   .advantages .card__text {
     text-align: left;
   }
-  .advantages__title {
-    font-size: 1.87rem;
+  .advantages .card__list-item {
+    font-size: 1.3rem;
   }
   .characteristics {
     padding: 20px 25px 80px 25px;
@@ -1683,7 +1689,7 @@ body {
     color: #194f76;
   }
   .documents__title {
-    font-size: 1.87rem;
+    font-size: 2.5rem;
   }
   .documents__img {
     width: 250px;
@@ -1727,7 +1733,7 @@ body {
     gap: 30px;
   }
   .feedback__title {
-    font-size: 1.87rem;
+    font-size: 2.5rem;
   }
   .feedback .swiper-slide img {
     width: 36vw;
@@ -1746,7 +1752,7 @@ body {
     cursor: pointer;
   }
   .special-feedback__title {
-    font-size: 1.87rem;
+    font-size: 2.5rem;
   }
   .special-feedback .swiper-slide {
     padding: 0 150px;
@@ -1786,6 +1792,36 @@ body {
     text-align: center;
     font-size: 1.5rem;
   }
+  .footer {
+    text-align: center;
+  }
+  .footer__links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 16px;
+  }
+  .footer__links a {
+    font-family: "Cuprum";
+    font-weight: 400;
+    font-size: 2rem;
+  }
+  .footer .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 30px;
+  }
+  .footer .to-top {
+    font-size: 1.2rem;
+  }
+  .footer__copyright {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
 }
 @media screen and (max-width: 595px) {
   .navbar .row .btn {
@@ -1806,6 +1842,14 @@ body {
   .products,
   .advantages {
     padding: 0 10px;
+  }
+  .products .card__text-header,
+  .advantages .card__text-header {
+    font-size: 1.5rem;
+  }
+  .products .card__list-item,
+  .advantages .card__list-item {
+    font-size: 1.4rem;
   }
   .consulting .form {
     display: -webkit-box;
@@ -1856,16 +1900,15 @@ body {
     text-align: left;
   }
   .introduction__title {
-    font-size: 1.8rem;
     text-align: center;
     font-weight: 700;
     margin-bottom: 30px;
   }
   .introduction__label {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
   .introduction__mission {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
   .documents .wrapper {
     padding: 80px 0 80px 0;
@@ -1889,9 +1932,6 @@ body {
   }
   .special-feedback {
     padding: 50px 15px;
-  }
-  .special-feedback__title {
-    font-size: 1.87rem;
   }
   .special-feedback .swiper-slide {
     padding: 0 75px;
@@ -1920,6 +1960,9 @@ body {
   .consulting__text {
     font-size: 1.3rem;
   }
+  .advantages .card {
+    padding: 50px 30px;
+  }
   .documents .wrapper {
     padding: 60px 10px 60px 10px;
   }
@@ -1936,9 +1979,6 @@ body {
     width: 56vw;
     height: 70vh;
   }
-  .special-feedback__title {
-    font-size: 1.87rem;
-  }
   .special-feedback .swiper-slide {
     padding: 0 75px;
   }
@@ -1951,9 +1991,6 @@ body {
   .special-feedback .swiper-slide img {
     width: 35vw;
     height: 35vw;
-  }
-  .factories__title {
-    font-size: 1.7rem;
   }
   .factories__text {
     font-size: 0.9rem;
@@ -1984,5 +2021,11 @@ body {
   }
   .special-feedback {
     padding: 50px 10px;
+  }
+  .factories__text {
+    font-size: 1.2rem;
+  }
+  .factories__phone {
+    font-size: 1.2rem;
   }
 }

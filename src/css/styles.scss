@@ -130,7 +130,7 @@ body {
 		}
 	}
 
-	.row {
+	& .row {
 		gap: 26px;
 		align-items: center;
 	}
@@ -302,9 +302,6 @@ body {
 		}
 
 		&__control {
-			// margin: 0;
-			// padding: 0;
-			// width: auto;
 			height: 50px;
 
 			position: relative;
@@ -423,6 +420,11 @@ body {
 			font-size: 1.2rem;
 		}
 
+		&__list {
+			margin: 0;
+			padding: 0;
+		}
+
 		&__list-item {
 			font-weight: 300;
 			font-size: 1.2rem;
@@ -528,8 +530,6 @@ body {
 		padding: 100px 135px 100px 135px;
 		background-image: url("../img/products-bg-blur.webp");
 		background-size: cover;
-
-		// width: 100%;
 	}
 
 	& .container {
@@ -826,11 +826,65 @@ body {
 	}
 
 	&__map {
-		width: 100%;
+		width: 99.9%;
 		height: 70vh;
 		background-color: $light-gray;
 		margin: 0;
 		padding: 0;
+	}
+}
+
+// Футер
+.footer {
+	background-color: $light-blue;
+
+	padding: 17px 0;
+	color: $white;
+
+	& .container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0;
+	}
+
+	&__copyright {
+		margin: 0;
+		font-weight: 400;
+		font-size: 1rem;
+		line-height: 140%;
+	}
+
+	& a {
+		color: $white;
+	}
+
+	&__links {
+		display: flex;
+		gap: 37px;
+	}
+
+	&__link {
+		font-weight: 400;
+		font-size: 1.4rem;
+		line-height: 120%;
+		text-transform: uppercase;
+	}
+
+	& .to-top {
+		font-weight: 700;
+		font-size: 1rem;
+		line-height: 140%;
+
+		text-decoration: none;
+
+		&:hover {
+			color: $light-gray;
+
+			& svg path {
+				stroke: $light-gray;
+			}
+		}
 	}
 }
 
