@@ -4,21 +4,23 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Бетон Строй</title>
-		<link href="./css/bootstrap.min.css" rel="stylesheet" />
+		<link href="./css/libs/swiper-bundle.min.css" rel="stylesheet" />
+		<link href="./css/libs/bootstrap.min.css" rel="stylesheet" />
 		<link href="./css/styles.css" rel="stylesheet" />
 
-		<script defer src="./js/jquery.min.js"></script>
-		<script defer src="./js/bootstrap.bundle.min.js"></script>
-		<script defer src="./js/cleave.min.js"></script>
-		<script defer src="./js/cleave-phone.ru.js"></script>
-		<script defer src="./js/script.js"></script>
+		<script defer src="./js/libs/jquery.min.js"></script>
+		<script defer src="./js/libs/swiper-bundle.min.js"></script>
+		<script defer src="./js/libs/bootstrap.bundle.min.js"></script>
+		<script defer src="./js/libs/cleave.min.js"></script>
+		<script defer src="./js/libs/cleave-phone.ru.js"></script>
+		<script defer type="module" src="./js/script.js"></script>
 	</head>
 	<body>
 		<!-- Навигационная панель (из бутстрапа) -->
 		<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 			<!-- Логотип -->
 			<a class="navbar-brand" href="#">
-				<img src="./img/logo.png" alt="Бетон Строй" />
+				<img loading="lazy" src="./img/logo.png" alt="Бетон Строй" />
 			</a>
 
 			<!-- Меню -->
@@ -371,7 +373,7 @@
 					<!-- Карточка -->
 					<article class="card products__card">
 						<div class="card__img">
-							<img src="./img/cards/card-1j.avif" alt="Бетон" />
+							<img loading="lazy" src="./img/cards/card-1j.avif" alt="Бетон" />
 						</div>
 
 						<div class="card__body">
@@ -395,7 +397,7 @@
 					<!-- Карточка -->
 					<article class="card products__card">
 						<div class="card__img">
-							<img src="./img/cards/card-2j.avif" alt="Песок" />
+							<img loading="lazy" src="./img/cards/card-2j.avif" alt="Песок" />
 						</div>
 
 						<div class="card__body">
@@ -417,7 +419,7 @@
 					<!-- Карточка -->
 					<article class="card products__card">
 						<div class="card__img">
-							<img src="./img/cards/card-3j.avif" alt="Щебень" />
+							<img loading="lazy" src="./img/cards/card-3j.avif" alt="Щебень" />
 						</div>
 
 						<div class="card__body">
@@ -440,7 +442,11 @@
 					<!-- Карточка -->
 					<article class="card products__card">
 						<div class="card__img">
-							<img src="./img/cards/card-4j.avif" alt="Доставка" />
+							<img
+								loading="lazy"
+								src="./img/cards/card-4j.avif"
+								alt="Доставка"
+							/>
 						</div>
 
 						<div class="card__body">
@@ -588,7 +594,11 @@
 					<!-- Карточка -->
 					<article class="card advantages__card">
 						<div class="card__img">
-							<img src="./img/cards/adv-card-1.png" alt="Козыри" />
+							<img
+								loading="lazy"
+								src="./img/cards/adv-card-1.png"
+								alt="Козыри"
+							/>
 						</div>
 
 						<div class="card__body">
@@ -612,7 +622,7 @@
 					<!-- Карточка -->
 					<article class="card advantages__card">
 						<div class="card__img">
-							<img src="./img/cards/adv-card-2.png" alt="Цены" />
+							<img loading="lazy" src="./img/cards/adv-card-2.png" alt="Цены" />
 						</div>
 
 						<div class="card__body">
@@ -634,7 +644,11 @@
 					<!-- Карточка -->
 					<article class="card advantages__card">
 						<div class="card__img">
-							<img src="./img/cards/adv-card-3.png" alt="Заводы" />
+							<img
+								loading="lazy"
+								src="./img/cards/adv-card-3.png"
+								alt="Заводы"
+							/>
 						</div>
 
 						<div class="card__body">
@@ -713,6 +727,7 @@
 					<div class="row">
 						<div class="documents__item" id="1">
 							<img
+								loading="lazy"
 								class="documents__img"
 								src="./img/documents/document-1.png"
 								alt=""
@@ -722,12 +737,148 @@
 
 						<div class="documents__item" id="2">
 							<img
+								loading="lazy"
 								class="documents__img"
 								src="./img/documents/document-2.png"
 								alt=""
 								id="2"
 							/>
 						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Обзор -->
+		<section class="overview">
+			<div class="row">
+				<div class="overview__slider">
+					<div class="swiper overview__swiper">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide">
+								<picture>
+									<source
+										srcset="./img/slider/slide-1-mobile.png"
+										media="(max-width: 1000px)"
+									/>
+									<img
+										loading="lazy"
+										src="./img/slider/slide-1-desk.png"
+										alt=""
+									/>
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture>
+									<source
+										srcset="./img/slider/slide-2-mobile.png"
+										media="(max-width: 1000px)"
+									/>
+									<img
+										loading="lazy"
+										src="./img/slider/slide-2-desk.png"
+										alt=""
+									/>
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture>
+									<source
+										srcset="./img/slider/slide-3-mobile.png"
+										media="(max-width: 1000px)"
+									/>
+									<img
+										loading="lazy"
+										src="./img/slider/slide-3-desk.png"
+										alt=""
+									/>
+								</picture>
+							</div>
+						</div>
+						<!-- If we need pagination -->
+						<div class="swiper-pagination"></div>
+
+						<!-- If we need navigation buttons -->
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					</div>
+				</div>
+
+				<div class="overview__desc">
+					<h2 class="overview__title">Наши объекты внутри и снаружи</h2>
+
+					<p class="overview__text">
+						Во многих сферах качество конечного продукта определяется качеством
+						оборудования и средств производства. В нашей сфере – особенно,
+						поэтому мы уделяем большое внимание техническому состоянию нашего
+						автопарка и объектов. Не менее важным аспектом эффективной работы
+						является команда профессионалов
+					</p>
+
+					<button class="btn btn-primary overview__btn">
+						Познакомиться с командой
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Отзывы -->
+		<section class="feedback">
+			<h2>Отзывы</h2>
+			<div class="wrapper">
+				<div class="feedback__slider">
+					<div class="swiper feedback__swiper">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide">
+								<picture>
+									<source
+										srcset="./img/feedbacks/feedback-mobile-1.png"
+										media="(max-width: 1000px)"
+									/>
+									<img
+										loading="lazy"
+										src="./img/feedbacks/feedback-1.png"
+										alt=""
+									/>
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture>
+									<source
+										srcset="./img/feedbacks/feedback-mobile-2.png"
+										media="(max-width: 1000px)"
+									/>
+									<img
+										loading="lazy"
+										src="./img/feedbacks/feedback-2.png"
+										alt=""
+									/>
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture>
+									<source
+										srcset="./img/feedbacks/feedback-mobile-3.png"
+										media="(max-width: 1000px)"
+									/>
+									<img
+										loading="lazy"
+										src="./img/feedbacks/feedback-3.png"
+										alt=""
+									/>
+								</picture>
+							</div>
+						</div>
+						<!-- If we need pagination -->
+						<div class="swiper-pagination"></div>
+
+						<!-- If we need navigation buttons -->
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
 					</div>
 				</div>
 			</div>

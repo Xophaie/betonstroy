@@ -1,8 +1,12 @@
 {
+  "type": "module",
   "dependencies": {
     "jquery": "^3.7.1"
   },
   "devDependencies": {
     "gulp-font": "^1.0.4"
   }
+  
+
+
 }
