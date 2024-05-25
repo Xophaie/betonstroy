@@ -8,6 +8,10 @@
 		<link href="./css/libs/bootstrap.min.css" rel="stylesheet" />
 		<link href="./css/styles.css" rel="stylesheet" />
 
+		<script
+			defer
+			src="https://api-maps.yandex.ru/2.1/?apikey=2dd8f4e7-5d76-468a-9fad-c904f7a814b7&lang=ru_RU"
+		></script>
 		<script defer src="./js/libs/jquery.min.js"></script>
 		<script defer src="./js/libs/swiper-bundle.min.js"></script>
 		<script defer src="./js/libs/bootstrap.bundle.min.js"></script>
@@ -470,7 +474,7 @@
 		</section>
 
 		<!-- Консультация -->
-		<section class="consulting">
+		<article class="consulting">
 			<div class="container">
 				<div class="row">
 					<!-- Описание -->
@@ -534,7 +538,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</article>
 
 		<!-- Ознакомление с производством  -->
 		<section class="introduction">
@@ -754,9 +758,7 @@
 			<div class="row">
 				<div class="overview__slider">
 					<div class="swiper overview__swiper">
-						<!-- Additional required wrapper -->
 						<div class="swiper-wrapper">
-							<!-- Slides -->
 							<div class="swiper-slide">
 								<picture>
 									<source
@@ -797,10 +799,8 @@
 								</picture>
 							</div>
 						</div>
-						<!-- If we need pagination -->
 						<div class="swiper-pagination"></div>
 
-						<!-- If we need navigation buttons -->
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-button-next"></div>
 					</div>
@@ -826,13 +826,11 @@
 
 		<!-- Отзывы -->
 		<section class="feedback">
-			<h2>Отзывы</h2>
+			<h2 class="feedback__title">Реальные отзывы о нас</h2>
 			<div class="wrapper">
 				<div class="feedback__slider">
 					<div class="swiper feedback__swiper">
-						<!-- Additional required wrapper -->
 						<div class="swiper-wrapper">
-							<!-- Slides -->
 							<div class="swiper-slide">
 								<picture>
 									<source
@@ -873,15 +871,226 @@
 								</picture>
 							</div>
 						</div>
-						<!-- If we need pagination -->
+
 						<div class="swiper-pagination"></div>
 
-						<!-- If we need navigation buttons -->
 						<div class="swiper-button-prev"></div>
 						<div class="swiper-button-next"></div>
 					</div>
 				</div>
 			</div>
 		</section>
+
+		<!-- Специальные отзывы -->
+		<section class="special-feedback">
+			<div class="row">
+				<h2 class="special-feedback__title">
+					НеРеальные отзывы о нас
+					<br />
+					Бывает и такое!
+				</h2>
+				<div class="special-feedback__slider">
+					<div class="swiper special-feedback__swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<picture class="slide-img">
+									<source
+										srcset="./img/feedbacks/special-feedback-mobile-1.png"
+										media="(max-width: 1000px)"
+									/>
+									<img
+										loading="lazy"
+										src="./img/feedbacks/special-feedback-1.png"
+										alt=""
+									/>
+								</picture>
+								<p class="slide-review">
+									Решила отомстить парню за измену и залить его кабриолет.
+									Спасибо ребятам из "Бетон Строй" за то, что посоветовали мне
+									для этого дела заказать пару кубов "двухсотого". Ещё и
+									щебёнкой бесплатно сверху закидали. Вы лучшие!
+								</p>
+								<p class="slide-name">Кристина Девошкина</p>
+							</div>
+
+							<div class="swiper-slide">
+								<picture class="slide-img">
+									<source
+										srcset="./img/feedbacks/special-feedback-mobile-1.png"
+										media="(max-width: 1000px)"
+									/>
+									<img
+										loading="lazy"
+										src="./img/feedbacks/special-feedback-1.png"
+										alt=""
+									/>
+								</picture>
+								<p class="slide-review">
+									Решила отомстить парню за измену и залить его кабриолет.
+									Спасибо ребятам из "Бетон Строй" за то, что посоветовали мне
+									для этого дела заказать пару кубов "двухсотого". Ещё и
+									щебёнкой бесплатно сверху закидали. Вы лучшие!
+								</p>
+								<p class="slide-name">Кристина Девошкина</p>
+							</div>
+
+							<div class="swiper-slide">
+								<picture class="slide-img">
+									<source
+										srcset="./img/feedbacks/special-feedback-mobile-1.png"
+										media="(max-width: 1000px)"
+									/>
+									<img
+										loading="lazy"
+										src="./img/feedbacks/special-feedback-1.png"
+										alt=""
+									/>
+								</picture>
+								<p class="slide-review">
+									Решила отомстить парню за измену и залить его кабриолет.
+									Спасибо ребятам из "Бетон Строй" за то, что посоветовали мне
+									для этого дела заказать пару кубов "двухсотого". Ещё и
+									щебёнкой бесплатно сверху закидали. Вы лучшие!
+								</p>
+								<p class="slide-name">Кристина Девошкина</p>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Консультация -->
+		<article class="consulting">
+			<div class="container">
+				<div class="row">
+					<!-- Описание -->
+					<div class="col-xl-5 col-sm-12">
+						<div class="consulting__desc">
+							<h2 class="consulting__title">Нужна консультация?</h2>
+
+							<p class="consulting__text">
+								Заполните поля. Мы сразу перезвоним и проконсультируем Вас
+							</p>
+							<p class="consulting__warning">
+								Отправляя данные в форму, вы выражаете согласие с
+								<a href="#"> нашей политикой обработки персональных данных </a>
+							</p>
+						</div>
+					</div>
+
+					<!-- Форма -->
+					<div class="col-xl-7 col-sm-12">
+						<form action="#" class="form header__form">
+							<div class="form__control">
+								<input
+									required
+									type="text"
+									placeholder="Представьтесь *"
+									class="form__input"
+									id="name"
+								/>
+								<label for="name" class="d-none"></label>
+							</div>
+
+							<div class="form__control">
+								<input
+									required
+									id="phone"
+									type="text"
+									placeholder="Ваш телефон *"
+									class="form__input input-phone"
+								/>
+								<label for="phone" class=""></label>
+							</div>
+
+							<div class="form__control form__purpose">
+								<input
+									type="text"
+									placeholder="Для каких целей нужен бетон"
+									class="form__input"
+									id="purpose"
+								/>
+								<label for="name" class="d-none"></label>
+							</div>
+
+							<button type="submit" class="btn btn-primary form__button">
+								Проконсультироваться
+							</button>
+							<p class="form__text">
+								Отправляя данные в форму, вы выражаете согласие с
+								<a href="#"> нашей политикой обработки персональных данных </a>
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<!-- Заводы -->
+		<section class="factories">
+			<!-- Шапка -->
+			<div class="factories__header">
+				<h2 class="factories__title">Адреса наших заводов и контакты</h2>
+				<p class="factories__text">
+					Режим работы: ежедневно с 7.30 до 20.00.
+					<br />
+					Наш единый контактный номер:
+				</p>
+				<a href="tel:+74951518272" class="factories__phone">+7 495 151 82 72</a>
+			</div>
+
+			<!-- Адреса -->
+			<div class="container">
+				<div class="factories__addresses">
+					<!-- Завод -->
+					<article class="factories__factory">
+						<h3 class="factories__factory-name">Завод "Красный путь"</h3>
+						<p class="factories__factory-address">
+							Домодедово, пос. Красный путь, владение «Карьер Бурхино»
+						</p>
+						<a href="#" class="factories__factory-route"> Проложить маршрут </a>
+					</article>
+
+					<!-- Завод -->
+					<article class="factories__factory">
+						<h3 class="factories__factory-name">Завод "Домодедово"</h3>
+						<p class="factories__factory-address">
+							Московская область, город Домодедово, улица Промышленная 11,
+							территория 342 Механического завода
+						</p>
+						<a href="#" class="factories__factory-route"> Проложить маршрут </a>
+					</article>
+
+					<!-- Завод -->
+					<article class="factories__factory">
+						<h3 class="factories__factory-name">Завод "Михнево"</h3>
+						<p class="factories__factory-address">
+							Московская область, Ступинский район, пгт. Михнево, ул.Донбасская
+							93
+						</p>
+						<a href="#" class="factories__factory-route"> Проложить маршрут </a>
+					</article>
+				</div>
+			</div>
+
+			<!-- Карта -->
+			<div class="factories__map" id="map"></div>
+		</section>
+
+		<!-- Футер -->
+		<footer class="footer">
+			<p class="footer__copyright">©2009—2022 Бетон Строй</p>
+			<div class="footer__links">
+				<a href="#" class="footer__link">Наши продукты</a>
+				<a href="#" class="footer__link">Услуги</a>
+				<a href="#" class="footer__link">О компании</a>
+				<a href="#" class="footer__link">Контакты</a>
+			</div>
+		</footer>
 	</body>
 </html>

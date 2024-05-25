@@ -1,7 +1,6 @@
-// import Swiper from "./libs/swiper-bundle.min";
-// import { Navigation, Pagination } from "./libs/swiper-bundle.min";
-
 $(document).ready(function () {
+	const API_KEY = "2dd8f4e7-5d76-468a-9fad-c904f7a814b7";
+
 	// Cleave
 	const $window = $(window);
 	const $feedbackSwiperDOM = $(".feedback .swiper");
@@ -38,6 +37,7 @@ $(document).ready(function () {
 
 	// Слайдеры
 
+	// Обзор
 	const overviewSwiper = new Swiper(".overview__swiper", {
 		direction: "horizontal",
 		loop: true,
@@ -52,35 +52,76 @@ $(document).ready(function () {
 		},
 	});
 
+	// Отзывы
 	// Переключение двух видов слайдеров в зависимости от ширины экрана
-	// Вид слайдера определяется только по инициализации. Смена видов не происходит динамически при изменении ширины экрана в инструментах разработчика
-	$window.on("resize", function () {
-		if (window.matchMedia("(min-width: 767px)").matches) {
-			const feedbackSwiper = new Swiper(".feedback__swiper", {
-				direction: "horizontal",
-				loop: true,
-				slidesPerView: 3,
+	// Вид слайдера определяется только по инициализации. Смена видов не происходит динамически при изменении ширины экрана в инструментах разработчика-
+	if (window.matchMedia("(min-width: 767px)").matches) {
+		const feedbackSwiper = new Swiper(".feedback__swiper", {
+			direction: "horizontal",
+			loop: true,
+			slidesPerView: 3,
 
-				navigation: {
-					nextEl: ".swiper-button-next",
-					prevEl: ".swiper-button-prev",
-				},
-			});
-		} else {
-			const feedbackSwiper = new Swiper(".feedback__swiper", {
-				direction: "horizontal",
-				loop: true,
-				slidesPerView: 1,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+	} else {
+		const feedbackSwiper = new Swiper(".feedback__swiper", {
+			direction: "horizontal",
+			loop: true,
+			slidesPerView: 1,
 
-				pagination: {
-					el: ".swiper-pagination",
-				},
+			pagination: {
+				el: ".swiper-pagination",
+			},
 
-				navigation: {
-					nextEl: ".swiper-button-next",
-					prevEl: ".swiper-button-prev",
-				},
-			});
-		}
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+	}
+
+	// Специальные отзывы
+	const specialFeedbackSwiper = new Swiper(".special-feedback__swiper", {
+		direction: "horizontal",
+		loop: true,
+
+		pagination: {
+			el: ".swiper-pagination",
+		},
+
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
 	});
+
+	ymaps.ready(init);
+
+	// Карта
+	function init() {
+		let map = new ymaps.Map("map", {
+			center: [55.650625, 37.62708],
+			zoom: 12,
+		});
+
+		let BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+			'<div style="margin: 0px;">' + "<p>Привет, мир!</p>" + "</div>"
+		);
+
+		let placemark = new ymaps.Placemark(
+			[55.650625, 37.62708],
+			{
+				name: "Привет, мир!",
+			},
+			{
+				balloonContentLayout: BalloonContentLayout,
+				balloonPanelMaxMapArea: 0,
+			}
+		);
+
+		map.geoObjects.add(placemark);
+	}
 });

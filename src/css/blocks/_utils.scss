@@ -1,0 +1,211 @@
+// Ошибка в формах
+.error {
+	border: 2px solid $red !important;
+	box-shadow: 0 0 20px 5px $red;
+}
+
+// Скейлинг
+.scale {
+	transition: all 0.3s;
+	transform: scale(2) translateY(10%) !important;
+}
+
+// Карточки
+.card {
+	display: flex;
+	flex-direction: column;
+
+	color: $white;
+	background-color: $dark-blue;
+
+	text-align: center;
+
+	&__desc {
+		text-align: center;
+
+		& h2 {
+			text-transform: uppercase;
+			font-size: 2.25rem;
+			line-height: 120%;
+			font-weight: 700;
+		}
+
+		& p {
+			font-weight: 400;
+			font-size: 1rem;
+			line-height: 140%;
+		}
+	}
+
+	&__img img {
+		width: 100%;
+	}
+
+	&__body {
+		padding: 20px;
+		height: 100%;
+
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__btns {
+		display: flex;
+		flex-direction: column;
+		margin-top: auto;
+
+		gap: 10px;
+
+		& button {
+			font-size: 0.8rem;
+		}
+	}
+}
+
+// Форма
+.form {
+	padding: 45px 50px;
+	background-color: $dark-blue;
+	border-radius: 10px;
+	// width: 350px;
+
+	&__input {
+		padding: 15px 16px;
+		width: 100%;
+
+		border-radius: 8px;
+		border: none;
+	}
+
+	&__text {
+		font-weight: 300;
+		font-size: 0.8rem;
+		line-height: 130%;
+		text-align: center;
+		color: $white;
+		margin-bottom: 0;
+
+		& a {
+			color: $white;
+			text-decoration: underline;
+
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
+}
+
+// Слайдер
+.swiper {
+	width: 100%;
+	height: 100%;
+	padding-bottom: 3%;
+
+	.swiper-horizontal > .swiper-pagination-bullets,
+	.swiper-pagination-bullets.swiper-pagination-horizontal,
+	.swiper-pagination-custom,
+	.swiper-pagination-fraction {
+		bottom: -5px;
+	}
+
+	&-pagination {
+		top: 2px;
+	}
+
+	&-slide img {
+		width: 100%;
+		height: 100%;
+	}
+
+	&-slide {
+		height: auto;
+	}
+
+	&-button-prev,
+	&-button-next {
+		background-color: #c4c4c463;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+
+		transition: all 0.3s;
+
+		&::after {
+			font-size: 1.6rem;
+			color: $black;
+		}
+	}
+
+	&-button-prev {
+		margin-left: 10px;
+		&::after {
+			margin-left: -8%;
+		}
+	}
+
+	&-button-next {
+		margin-right: 10px;
+		&::after {
+			margin-right: -8%;
+		}
+	}
+
+	&-button-prev:hover,
+	&-button-next:hover {
+		background-color: $orange;
+		cursor: pointer;
+	}
+}
+
+// Акция
+.promo {
+	background-color: $orange;
+	color: $white;
+
+	width: fit-content;
+
+	padding: 10px 20px;
+	border-radius: 12px;
+
+	&__title {
+		font-weight: 700;
+		line-height: 120%;
+		font-size: 1.8rem;
+	}
+
+	&__desc {
+		font-size: 0.8rem;
+		font-weight: 300;
+	}
+}
+
+// Кнопки
+.btn {
+	display: inline-block;
+	padding: 12px 24px;
+
+	font-style: normal;
+	font-weight: 700;
+	font-size: 1rem;
+	line-height: 100%;
+	width: 100%;
+
+	border: none;
+	border-radius: 8px;
+
+	&-primary {
+		color: $white;
+		background-color: $orange;
+
+		&:hover {
+			background-color: $gold !important;
+		}
+	}
+
+	&-secondary {
+		background-color: transparent;
+		border: 1px $orange solid;
+		color: $orange;
+	}
+}
