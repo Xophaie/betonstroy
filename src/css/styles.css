@@ -136,7 +136,7 @@ body {
 
 .header {
   padding: 250px 70px;
-  background-image: url("../img/header-bg-blur.avif");
+  background-image: url("../img/header-bg-blur.webp");
   color: #fff;
   background-size: cover;
 }
@@ -230,7 +230,7 @@ body {
 
 .products {
   padding: 80px 135px;
-  background-image: url("../img/products-bg-blur.avif");
+  background-image: url("../img/products-bg-blur.webp");
   background-size: cover;
 }
 .products .row {
@@ -543,7 +543,7 @@ body {
 }
 .documents .wrapper {
   padding: 100px 135px 100px 135px;
-  background-image: url("../img/products-bg-blur.avif");
+  background-image: url("../img/products-bg-blur.webp");
   background-size: cover;
 }
 .documents .container {
