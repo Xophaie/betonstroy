@@ -684,7 +684,7 @@ body {
 }
 .feedback .swiper-slide img {
   width: 20vw;
-  height: 85vh;
+  height: 65vh;
 }
 
 .special-feedback {
@@ -1928,7 +1928,7 @@ body {
   }
   .feedback .swiper-slide img {
     width: 46vw;
-    height: 80vh;
+    height: 40vh;
   }
   .special-feedback {
     padding: 50px 15px;
@@ -1976,8 +1976,8 @@ body {
     height: 227px;
   }
   .feedback .swiper-slide img {
-    width: 56vw;
-    height: 70vh;
+    width: 46vw;
+    height: 50vh;
   }
   .special-feedback .swiper-slide {
     padding: 0 75px;
