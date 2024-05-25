@@ -53,7 +53,7 @@ $(document).ready(function () {
 	// Отзывы
 	// Переключение двух видов слайдеров в зависимости от ширины экрана
 	// Вид слайдера определяется только по инициализации. Смена видов не происходит динамически при изменении ширины экрана в инструментах разработчика-
-	if (window.matchMedia("(min-width: 767px)").matches) {
+	if (window.matchMedia("(min-width: 769px)").matches) {
 		const feedbackSwiper = new Swiper(".feedback__swiper", {
 			direction: "horizontal",
 			loop: true,

@@ -684,7 +684,7 @@ body {
 }
 .feedback .swiper-slide img {
   width: 20vw;
-  height: 65vh;
+  height: 75vh;
 }
 
 .special-feedback {
@@ -1928,7 +1928,7 @@ body {
   }
   .feedback .swiper-slide img {
     width: 46vw;
-    height: 40vh;
+    height: 70vh;
   }
   .special-feedback {
     padding: 50px 15px;
@@ -2027,5 +2027,11 @@ body {
   }
   .factories__phone {
     font-size: 1.2rem;
+  }
+}
+@media screen and (min-height: 854px) and (min-width: 768px) {
+  .feedback .swiper-slide img {
+    width: 15vmax;
+    height: 30vmax;
   }
 }
