@@ -658,16 +658,11 @@
 		& .card {
 			margin-bottom: 10px;
 			border: none;
-
-			&:last-child {
-				// margin-bottom: 48px;
-			}
 		}
 	}
 
 	.consulting {
-		// background-image: url("../img/consulting-bg-mobile.png");
-		background: url("../img/consulting-bg-mobile.png") center center no-repeat;
+		background: url("../img/consulting-bg-mobile.webp") center center no-repeat;
 		background-size: cover;
 	}
 

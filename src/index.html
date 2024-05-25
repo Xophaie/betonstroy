@@ -7,17 +7,6 @@
 		<link href="./css/libs/swiper-bundle.min.css" rel="stylesheet" />
 		<link href="./css/libs/bootstrap.min.css" rel="stylesheet" />
 		<link href="./css/styles.css" rel="stylesheet" />
-
-		<script
-			defer
-			src="https://api-maps.yandex.ru/2.1/?apikey=2dd8f4e7-5d76-468a-9fad-c904f7a814b7&lang=ru_RU"
-		></script>
-		<script defer src="./js/libs/jquery.min.js"></script>
-		<script defer src="./js/libs/swiper-bundle.min.js"></script>
-		<script defer src="./js/libs/bootstrap.bundle.min.js"></script>
-		<script defer src="./js/libs/cleave.min.js"></script>
-		<script defer src="./js/libs/cleave-phone.ru.js"></script>
-		<script defer type="module" src="./js/script.js"></script>
 	</head>
 	<body>
 		<!-- Навигационная панель (из бутстрапа) -->
@@ -572,17 +561,7 @@
 
 					<!-- Видео -->
 					<div class="col-lg-7">
-						<iframe
-							class="introduction__video"
-							width="670"
-							height="380"
-							src="https://www.youtube.com/embed/lzBkUCoUQpk?si=usRVJvZdkLpMeZqI"
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							referrerpolicy="strict-origin-when-cross-origin"
-							allowfullscreen
-						></iframe>
+						<div class="youtube-player" data-id="lzBkUCoUQpk"></div>
 					</div>
 				</div>
 			</div>
@@ -600,7 +579,7 @@
 						<div class="card__img">
 							<img
 								loading="lazy"
-								src="./img/cards/adv-card-1.png"
+								src="./img/cards/adv-card-1.webp"
 								alt="Козыри"
 							/>
 						</div>
@@ -626,7 +605,11 @@
 					<!-- Карточка -->
 					<article class="card advantages__card">
 						<div class="card__img">
-							<img loading="lazy" src="./img/cards/adv-card-2.png" alt="Цены" />
+							<img
+								loading="lazy"
+								src="./img/cards/adv-card-2.webp"
+								alt="Цены"
+							/>
 						</div>
 
 						<div class="card__body">
@@ -650,7 +633,7 @@
 						<div class="card__img">
 							<img
 								loading="lazy"
-								src="./img/cards/adv-card-3.png"
+								src="./img/cards/adv-card-3.webp"
 								alt="Заводы"
 							/>
 						</div>
@@ -733,7 +716,7 @@
 							<img
 								loading="lazy"
 								class="documents__img"
-								src="./img/documents/document-1.png"
+								src="./img/documents/document-1.webp"
 								alt=""
 								id="1"
 							/>
@@ -743,7 +726,7 @@
 							<img
 								loading="lazy"
 								class="documents__img"
-								src="./img/documents/document-2.png"
+								src="./img/documents/document-2.webp"
 								alt=""
 								id="2"
 							/>
@@ -762,12 +745,12 @@
 							<div class="swiper-slide">
 								<picture>
 									<source
-										srcset="./img/slider/slide-1-mobile.png"
+										srcset="./img/slider/slide-1-mobile.webp"
 										media="(max-width: 1000px)"
 									/>
 									<img
 										loading="lazy"
-										src="./img/slider/slide-1-desk.png"
+										src="./img/slider/slide-1-desk.webp"
 										alt=""
 									/>
 								</picture>
@@ -775,12 +758,12 @@
 							<div class="swiper-slide">
 								<picture>
 									<source
-										srcset="./img/slider/slide-2-mobile.png"
+										srcset="./img/slider/slide-2-mobile.webp"
 										media="(max-width: 1000px)"
 									/>
 									<img
 										loading="lazy"
-										src="./img/slider/slide-2-desk.png"
+										src="./img/slider/slide-2-desk.webp"
 										alt=""
 									/>
 								</picture>
@@ -788,12 +771,12 @@
 							<div class="swiper-slide">
 								<picture>
 									<source
-										srcset="./img/slider/slide-3-mobile.png"
+										srcset="./img/slider/slide-3-mobile.webp"
 										media="(max-width: 1000px)"
 									/>
 									<img
 										loading="lazy"
-										src="./img/slider/slide-3-desk.png"
+										src="./img/slider/slide-3-desk.webp"
 										alt=""
 									/>
 								</picture>
@@ -834,12 +817,12 @@
 							<div class="swiper-slide">
 								<picture>
 									<source
-										srcset="./img/feedbacks/feedback-mobile-1.png"
+										srcset="./img/feedbacks/feedback-mobile-1.webp"
 										media="(max-width: 1000px)"
 									/>
 									<img
 										loading="lazy"
-										src="./img/feedbacks/feedback-1.png"
+										src="./img/feedbacks/feedback-1.webp"
 										alt=""
 									/>
 								</picture>
@@ -847,12 +830,12 @@
 							<div class="swiper-slide">
 								<picture>
 									<source
-										srcset="./img/feedbacks/feedback-mobile-2.png"
+										srcset="./img/feedbacks/feedback-mobile-2.webp"
 										media="(max-width: 1000px)"
 									/>
 									<img
 										loading="lazy"
-										src="./img/feedbacks/feedback-2.png"
+										src="./img/feedbacks/feedback-2.webp"
 										alt=""
 									/>
 								</picture>
@@ -860,12 +843,12 @@
 							<div class="swiper-slide">
 								<picture>
 									<source
-										srcset="./img/feedbacks/feedback-mobile-3.png"
+										srcset="./img/feedbacks/feedback-mobile-3.webp"
 										media="(max-width: 1000px)"
 									/>
 									<img
 										loading="lazy"
-										src="./img/feedbacks/feedback-3.png"
+										src="./img/feedbacks/feedback-3.webp"
 										alt=""
 									/>
 								</picture>
@@ -895,13 +878,13 @@
 							<div class="swiper-slide">
 								<picture class="slide-img">
 									<source
-										srcset="./img/feedbacks/special-feedback-mobile-1.png"
+										srcset="./img/feedbacks/special-feedback-mobile-1.webp"
 										media="(max-width: 1000px)"
 									/>
 									<img
 										loading="lazy"
-										src="./img/feedbacks/special-feedback-1.png"
-										alt=""
+										src="./img/feedbacks/special-feedback-1.webp"
+										alt="Фото отзыва"
 									/>
 								</picture>
 								<p class="slide-review">
@@ -916,13 +899,13 @@
 							<div class="swiper-slide">
 								<picture class="slide-img">
 									<source
-										srcset="./img/feedbacks/special-feedback-mobile-1.png"
+										srcset="./img/feedbacks/special-feedback-mobile-1.webp"
 										media="(max-width: 1000px)"
 									/>
 									<img
 										loading="lazy"
-										src="./img/feedbacks/special-feedback-1.png"
-										alt=""
+										src="./img/feedbacks/special-feedback-1.webp"
+										alt="Фото отзыва"
 									/>
 								</picture>
 								<p class="slide-review">
@@ -937,13 +920,13 @@
 							<div class="swiper-slide">
 								<picture class="slide-img">
 									<source
-										srcset="./img/feedbacks/special-feedback-mobile-1.png"
+										srcset="./img/feedbacks/special-feedback-mobile-1.webp"
 										media="(max-width: 1000px)"
 									/>
 									<img
 										loading="lazy"
-										src="./img/feedbacks/special-feedback-1.png"
-										alt=""
+										src="./img/feedbacks/special-feedback-1.webp"
+										alt="Фото отзыва"
 									/>
 								</picture>
 								<p class="slide-review">
@@ -1092,5 +1075,13 @@
 				<a href="#" class="footer__link">Контакты</a>
 			</div>
 		</footer>
+
+		<script src="https://api-maps.yandex.ru/2.1/?apikey=2dd8f4e7-5d76-468a-9fad-c904f7a814b7&lang=ru_RU"></script>
+		<script src="./js/libs/jquery.min.js"></script>
+		<script src="./js/libs/swiper-bundle.min.js"></script>
+		<script src="./js/libs/bootstrap.bundle.min.js"></script>
+		<script src="./js/libs/cleave.min.js"></script>
+		<script src="./js/libs/cleave-phone.ru.js"></script>
+		<script type="module" src="./js/script.js"></script>
 	</body>
 </html>

@@ -124,4 +124,46 @@ $(document).ready(function () {
 
 		map.geoObjects.add(placemark);
 	}
+
+	// Облегчить ютуб видео
+	function labnolIframe($div) {
+		let $iframe = $("<iframe></iframe>");
+
+		$iframe.attr(
+			"src",
+			"https://www.youtube.com/embed/" + $div.dataset.id + "?autoplay=1"
+		);
+		$iframe.attr("frameborder", "0");
+		$iframe.attr("allowfullscreen", "1");
+		$iframe.attr(
+			"allow",
+			"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+		);
+		$div.innerHTML = "";
+		$div.append($iframe[0]);
+	}
+
+	function initYouTubeVideos() {
+		let playerElements = $(".youtube-player");
+		for (let n = 0; n < playerElements.length; n++) {
+			let videoId = playerElements[n].dataset.id;
+			let $div = $("<div></div>");
+			$div.attr("data-id", videoId);
+			let $thumbNode = $("<img> </img>");
+			$thumbNode.attr(
+				"src",
+				"//i.ytimg.com/vi/ID/hqdefault.jpg".replace("ID", videoId)
+			);
+			$div.append($thumbNode);
+			let $playButton = $("<div></div>");
+			$playButton.attr("class", "play");
+			$div.append($playButton);
+			$div.on("click", function () {
+				labnolIframe(this);
+			});
+			playerElements[n].append($div[0]);
+		}
+	}
+
+	initYouTubeVideos();
 });
