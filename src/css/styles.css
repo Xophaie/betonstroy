@@ -44,12 +44,21 @@ body {
 }
 
 .navbar {
+  padding: 0 15px;
   background-color: #fff !important;
 }
 .navbar .hb {
   width: 30px;
   margin: 0 auto;
   display: block;
+}
+.navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .navbar-toggler {
   background-color: #fff;
@@ -121,6 +130,18 @@ body {
 .navbar .dropdown-item:active {
   background-color: #fff;
 }
+.navbar .nav-item .nav-link::after {
+  top: 60%;
+}
+.navbar .nav-item:has(.show) .nav-link::after {
+  rotate: 180deg;
+  -webkit-transition: rotate 0.3s;
+  transition: rotate 0.3s;
+}
+.navbar .collapsing {
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
 .navbar .row {
   gap: 26px;
   -webkit-box-align: center;
@@ -133,19 +154,23 @@ body {
   width: fit-content;
   margin-right: 10px;
 }
+.navbar .toggler {
+  border: none;
+}
 
-.header {
-  padding: 250px 70px;
+.banner {
+  padding: 0;
   background-image: url("../img/header-bg-blur.webp");
   color: #fff;
   background-size: cover;
 }
-.header .row {
+.banner .row {
+  padding: 250px 20px;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   gap: 50px;
 }
-.header .row .col-xxl-8 {
+.banner .row .col-xl-8 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -155,22 +180,28 @@ body {
           flex-direction: column;
   gap: 24px;
 }
-.header .row .col-xxl-4 {
+.banner .row .col-xl-4 {
   height: 100%;
   margin: auto 0;
+  padding-left: 0;
 }
-.header__title {
+.banner__title {
   font-weight: 700;
   line-height: 110%;
   font-size: 3.4rem;
-  margin: 25px 0;
+  margin: 0;
 }
-.header__text {
+.banner__text {
   font-size: 1.75rem;
   font-weight: normal;
   line-height: 130%;
+  margin: 0;
 }
-.header__form {
+.banner__text:first-of-type {
+  margin-bottom: 20px;
+}
+.banner__form {
+  padding-bottom: 40px !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,32 +211,38 @@ body {
           flex-direction: column;
   gap: 15px;
 }
-.header__form input::-webkit-input-placeholder {
+.banner__form input::-webkit-input-placeholder {
   color: #2d2d2d;
 }
-.header__form input::-moz-placeholder {
+.banner__form input::-moz-placeholder {
   color: #2d2d2d;
 }
-.header__form input:-ms-input-placeholder {
+.banner__form input:-ms-input-placeholder {
   color: #2d2d2d;
 }
-.header__form input::-ms-input-placeholder {
+.banner__form input::-ms-input-placeholder {
   color: #2d2d2d;
 }
-.header__form input::placeholder {
+.banner__form input::placeholder {
   color: #2d2d2d;
 }
-.header__form .form__button {
+.banner__form .form__button {
   padding: 12px 24px;
   text-align: center;
   margin: 5px 0;
   width: 100%;
   height: 50px;
 }
+.banner__form .form__text a:hover {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
 
 .instruction {
-  padding: 65px 350px;
   background-color: #fff;
+}
+.instruction .container {
+  padding: 65px 100px;
 }
 .instruction .col-12 {
   text-align: center;
@@ -215,21 +252,19 @@ body {
   gap: 30px;
 }
 .instruction .col-12 .btn {
-  font-size: 1.12rem;
+  font-size: 1.2rem;
   margin-top: 20px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 40%;
 }
 .instruction__text p {
   font-size: 1.7rem;
   line-height: 120%;
   font-weight: 500;
   color: #194f76;
+  margin: 0;
 }
 
 .products {
-  padding: 80px 135px;
   background-image: url("../img/products-bg-blur.webp");
   background-size: cover;
 }
@@ -237,12 +272,26 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 85px;
+  padding-bottom: 75px;
   gap: 30px;
 }
 .products .row article {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+.products .card {
+  border: none;
+}
+.products .card__img {
+  height: 160px;
+}
+.products .card__img img {
+  width: 100%;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .consulting {
@@ -289,9 +338,13 @@ body {
 }
 .consulting__warning a {
   color: #000;
+  text-decoration: underline;
 }
 .consulting__warning a:hover {
+  text-decoration: none;
   color: #df650b;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .consulting .form {
   display: -ms-grid;
@@ -302,9 +355,54 @@ body {
 }
 .consulting .form__text {
   display: none;
+  font-size: 1.1rem;
+}
+.consulting .form__text a:hover {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.consulting .form input::-webkit-input-placeholder {
+  color: #010101;
+  font-weight: 500;
+}
+.consulting .form input::-moz-placeholder {
+  color: #010101;
+  font-weight: 500;
+}
+.consulting .form input:-ms-input-placeholder {
+  color: #010101;
+  font-weight: 500;
+}
+.consulting .form input::-ms-input-placeholder {
+  color: #010101;
+  font-weight: 500;
+}
+.consulting .form input::placeholder {
+  color: #010101;
+  font-weight: 500;
+}
+.consulting .form input {
+  height: 50px !important;
+}
+.consulting .form input#purpose {
+  margin-top: -10px;
+}
+.consulting .form label {
+  position: absolute;
+  font-size: 1rem;
+  color: #df650b;
+}
+.consulting .form label[for=consulting__name] {
+  left: 51%;
+  top: 25%;
+}
+.consulting .form label[for=consulting__phone] {
+  left: 46%;
+  top: 25%;
 }
 .consulting .form__control {
   height: 50px;
+  width: 100%;
   position: relative;
 }
 .consulting .form__control input {
@@ -317,15 +415,18 @@ body {
   grid-column: 1/3;
 }
 .consulting .form button {
+  padding: 22px 25px;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1/3;
 }
 
 .introduction {
-  padding: 75px 0;
   color: #194f76;
   background-color: #fff;
+}
+.introduction .row {
+  margin: 75px 0 68px 0;
 }
 .introduction .col-lg-5 {
   display: -webkit-box;
@@ -369,10 +470,10 @@ body {
   width: -webkit-fit-content !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
+  padding: 19px 24px !important;
 }
 
 .advantages {
-  padding: 20px 135px 80px 135px;
   background-color: #fff;
 }
 .advantages .container {
@@ -399,6 +500,7 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-bottom: 80px;
   gap: 30px;
 }
 .advantages .row article {
@@ -511,32 +613,6 @@ body {
           flex-direction: column;
   gap: 50px;
 }
-.documents .zoom {
-  position: fixed;
-  z-index: 9999999999;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6941176471);
-}
-.documents .zoom img {
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  -webkit-transform: scaleX(1.5) scaleY(1.4);
-          transform: scaleX(1.5) scaleY(1.4);
-}
 .documents__title {
   text-align: center;
   margin: 0;
@@ -571,14 +647,14 @@ body {
       flex-wrap: wrap;
   gap: 30px;
 }
-.documents__item {
+.documents a {
   position: relative;
 }
-.documents__item:not(.zoom):hover {
+.documents a:hover {
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
-.documents__item:not(.zoom):hover::before {
+.documents a:hover::before {
   content: url("../img/icons/Zoom.png");
   position: absolute;
   z-index: 11;
@@ -587,7 +663,7 @@ body {
   -webkit-transform: translate(-50%, -50%) scale(0.5);
           transform: translate(-50%, -50%) scale(0.5);
 }
-.documents__item:not(.zoom):hover::after {
+.documents a:hover::after {
   content: "";
   position: absolute;
   top: 0;
@@ -598,7 +674,7 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 79, 118, 0.4)));
   background: linear-gradient(rgba(25, 79, 118, 0.4));
 }
-.documents__item.zoom img:hover {
+.documents a.zoom img:hover {
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
@@ -622,7 +698,7 @@ body {
 }
 .overview__slider {
   min-width: 100%;
-  max-height: 90%;
+  height: 100% !important;
 }
 .overview__desc {
   display: -webkit-box;
@@ -648,7 +724,8 @@ body {
   line-height: 145%;
 }
 .overview__btn {
-  height: 60px;
+  padding: 25px !important;
+  font-size: 1.12rem !important;
 }
 
 .feedback {
@@ -988,6 +1065,7 @@ body {
 }
 .form__text a:hover {
   color: #df650b;
+  text-decoration: none;
 }
 
 .swiper {
@@ -1036,7 +1114,7 @@ body {
   margin-right: -8%;
 }
 .swiper-button-prev:hover, .swiper-button-next:hover {
-  background-color: #df650b;
+  background-color: #df650b !important;
   cursor: pointer;
 }
 
@@ -1053,10 +1131,12 @@ body {
   font-weight: 700;
   line-height: 120%;
   font-size: 1.8rem;
+  margin: 0;
 }
 .promo__desc {
   font-size: 0.8rem;
   font-weight: 300;
+  margin: 0;
 }
 
 .btn {
@@ -1157,6 +1237,12 @@ body {
     width: 23vw;
     height: 85vh;
   }
+  .consulting .form label[for=consulting__name] {
+    left: 120px;
+  }
+  .consulting .form label[for=consulting__phone] {
+    left: 105px;
+  }
 }
 @media screen and (max-width: 1200px) {
   html {
@@ -1164,13 +1250,13 @@ body {
   }
   .products,
   .advantages {
-    padding: 80px 135px 30px 135px;
     background-size: cover;
   }
   .products .row,
   .advantages .row {
     display: -ms-grid;
     display: grid;
+    padding: 85px 0 80px 0;
     -ms-grid-columns: 1fr 30px 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
@@ -1188,10 +1274,25 @@ body {
   .advantages__card {
     margin-bottom: 50px;
   }
+  .products .card__btns button {
+    font-size: 1rem;
+  }
+  .products .card__img {
+    height: 250px;
+  }
+  .products .card__img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
   .navbar .row {
     gap: 15px;
   }
-  .navbar .collapse ul a {
+  .navbar .dropdown-item {
+    padding: 2px 5px !important;
+  }
+  .navbar .collapse nav a {
     padding: 0;
     font-size: 0.8rem;
   }
@@ -1203,12 +1304,15 @@ body {
     width: 21px;
     height: 21px;
   }
-  .header {
-    padding-top: 100px;
-    padding-bottom: 100px;
+  .navbar__socials {
+    gap: 6px !important;
   }
-  .instruction {
-    padding: 30px 125px;
+  .banner .row {
+    padding: 100px 0;
+    gap: 15px !important;
+  }
+  .instruction .container {
+    padding: 80px 125px;
   }
   .consulting {
     padding: 35px 200px;
@@ -1219,14 +1323,28 @@ body {
   .consulting__desc {
     text-align: center;
   }
+  .consulting input#purpose {
+    margin-top: 0 !important;
+  }
   .consulting .form {
     margin-top: 15px;
+    gap: 15px;
+  }
+  .consulting .form .btn {
+    padding: 15px 25px;
+    font-size: 1.3rem;
   }
   .consulting .form__text {
     display: block;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-column: 1/3;
+  }
+  .consulting .form label[for=consulting__name] {
+    left: 110px;
+  }
+  .consulting .form label[for=consulting__phone] {
+    left: 100px;
   }
   .introduction__descr {
     display: -webkit-box;
@@ -1245,7 +1363,21 @@ body {
     width: 560px;
     height: 320px;
   }
+  .introduction__label {
+    font-size: 1rem;
+  }
+  .introduction__mission {
+    font-size: 1.3rem;
+  }
+  .introduction .btn {
+    font-size: 1.2rem;
+  }
+  .advantages .row {
+    padding: 0;
+    margin: 0px 0 50px 0;
+  }
   .advantages .card {
+    margin: 0;
     padding: 30px 0px;
   }
   .advantages .card__img img {
@@ -1268,7 +1400,7 @@ body {
   .swiper-pagination-bullets.swiper-pagination-horizontal,
   .swiper-pagination-custom,
   .swiper-pagination-fraction {
-    bottom: -2px !important;
+    bottom: -5px !important;
   }
   .overview {
     padding: 75px 85px;
@@ -1276,6 +1408,14 @@ body {
   .overview .row {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .overview__slider {
+    min-width: 100%;
+    max-height: 100vh;
   }
   .overview__desc {
     display: -webkit-box;
@@ -1300,7 +1440,7 @@ body {
     line-height: 145%;
   }
   .overview__btn {
-    font-size: 1.7rem;
+    font-size: 1.4rem !important;
   }
   .feedback__slider {
     padding: 100px 65px;
@@ -1340,13 +1480,13 @@ body {
     font-size: 2.1rem;
   }
 }
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 991px) {
   html {
     font-size: 12px;
   }
   .navbar .dropdown-divider {
     display: block !important;
-    margin: 3px 0;
+    margin: 5px 0;
   }
   .navbar .dropdown-menu {
     border: none;
@@ -1360,13 +1500,22 @@ body {
     top: 50%;
     margin-top: -5px;
   }
-  .navbar .collapse {
-    height: 100vh;
+  .navbar ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  .navbar .collapse ul a {
+  .navbar .my-2 {
+    margin-bottom: 20vh !important;
+    margin-top: 30px !important;
+  }
+  .navbar .collapse nav a {
     padding: 0.5rem;
     font-size: 1.1rem;
     font-weight: 700;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
   .navbar__contacts div a {
     font-size: 1.4rem;
@@ -1377,7 +1526,10 @@ body {
   }
   .navbar .row .btn {
     width: auto;
+    padding: 15px 65px;
+    margin: 0 !important;
     margin-left: 10px;
+    font-size: 1.3rem;
   }
   .navbar .row {
     gap: 30px;
@@ -1386,40 +1538,48 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .header {
+  .banner .row {
     padding: 50px 0;
-  }
-  .header .row {
+    gap: 30px !important;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .header__title {
-    margin: 25px 0;
+  .banner__title {
+    margin: 0;
   }
-  .header__text {
-    font-size: 1.1rem;
+  .banner__text {
+    font-size: 1.75rem;
   }
-  .header .promo__title {
-    font-size: 1.6rem;
+  .banner__text:first-of-type {
+    margin-bottom: 0px;
   }
-  .header .promo__desc {
-    font-size: 0.87rem;
+  .banner .promo__title {
+    font-size: 2rem;
   }
-  .header .form .btn {
-    font-size: 0.9rem;
+  .banner .promo__desc {
+    font-size: 1rem;
+  }
+  .banner .form .btn {
+    font-size: 1.2rem;
     padding: 0;
     line-height: 100%;
   }
-  .header .form__text {
-    font-size: 0.87rem;
+  .banner .form input {
+    font-size: 1.2rem;
   }
-  .products,
-  .advantages {
-    padding: 30px 40px;
+  .banner .form__text {
+    font-size: 1rem;
+  }
+  .instruction .container {
+    padding: 65px 50px;
   }
   .products .card__btns .btn,
   .advantages .card__btns .btn {
-    font-size: 1rem;
+    font-size: 1.3rem;
+  }
+  .products .card__text,
+  .advantages .card__text {
+    font-size: 1.3rem;
   }
   .consulting {
     padding: 35px 30px;
@@ -1430,43 +1590,46 @@ body {
   .consulting__text {
     font-size: 1.4rem;
   }
-  .consulting .form input::-webkit-input-placeholder {
-    font-size: 1rem;
-  }
-  .consulting .form input::-moz-placeholder {
-    font-size: 1rem;
-  }
-  .consulting .form input:-ms-input-placeholder {
-    font-size: 1rem;
-  }
-  .consulting .form input::-ms-input-placeholder {
-    font-size: 1rem;
-  }
-  .consulting .form input::placeholder {
-    font-size: 1rem;
+  .consulting .form {
+    gap: 15px;
   }
   .consulting .form .btn {
+    padding: 22px 25px;
     font-size: 1.4rem;
   }
+  .consulting .form input::-webkit-input-placeholder {
+    font-size: 1.1rem;
+  }
+  .consulting .form input::-moz-placeholder {
+    font-size: 1.1rem;
+  }
+  .consulting .form input:-ms-input-placeholder {
+    font-size: 1.1rem;
+  }
+  .consulting .form input::-ms-input-placeholder {
+    font-size: 1.1rem;
+  }
+  .consulting .form input::placeholder {
+    font-size: 1.1rem;
+  }
   .consulting .form__text {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
   .introduction .row {
     gap: 50px;
   }
   .introduction__title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
   .introduction__label {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
   }
   .introduction__mission {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
   .introduction__button {
-    font-size: 1.2rem;
+    font-size: 1.4rem !important;
     width: 100% !important;
-    height: 60px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1533,11 +1696,11 @@ body {
   }
   .overview__text {
     font-weight: 300;
-    font-size: 1rem;
-    line-height: 145%;
+    font-size: 1.6rem;
+    line-height: 25px;
   }
   .overview__btn {
-    font-size: 1.2rem;
+    font-size: 1.5rem !important;
   }
   .feedback__slider {
     padding-top: 50px;
@@ -1557,7 +1720,7 @@ body {
     padding: 0 150px;
   }
   .special-feedback .swiper-slide .slide-review {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 145%;
   }
   .special-feedback .swiper-slide .slide-name {
@@ -1602,29 +1765,49 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
-  .instruction {
-    padding: 30px;
+  .instruction .container {
+    padding: 37px 10px 44px 10px;
   }
   .products,
   .advantages {
     background-image: none;
     background-color: #fff;
-    padding-top: 10px;
   }
   .products .row,
   .advantages .row {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 10px;
   }
   .products .card,
   .advantages .card {
-    margin-bottom: 10px;
     border: none;
+    margin: 0;
   }
-  .consulting {
-    background: url("../img/consulting-bg-mobile.webp") center center no-repeat;
-    background-size: cover;
+  .products .row {
+    padding: 0;
+  }
+  .products {
+    margin-bottom: 47px;
+  }
+  .introduction__title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  .introduction__label {
+    font-size: 1.4rem;
+  }
+  .introduction__mission {
+    font-size: 1.6rem;
+  }
+  .introduction__button {
+    font-size: 1.4rem;
+  }
+  .advantages .row {
+    gap: 15px;
+  }
+  .advantages .card {
+    margin-bottom: 0 !important;
   }
   .advantages .card__text-header {
     margin-bottom: 10px;
@@ -1696,7 +1879,8 @@ body {
     height: 402px;
   }
   .overview {
-    padding: 75px 30px;
+    margin: 50px 30px;
+    padding: 0;
   }
   .overview__title {
     font-size: 1.87rem;
@@ -1707,7 +1891,7 @@ body {
     background-color: #87cef5;
   }
   .overview .swiper-button-prev:hover, .overview .swiper-button-next:hover {
-    background-color: #df650b;
+    background-color: #87cef5;
     cursor: pointer;
   }
   .overview .swiper-horizontal > .swiper-pagination-bullets,
@@ -1715,6 +1899,14 @@ body {
   .overview .swiper-pagination-custom,
   .overview .swiper-pagination-fraction {
     bottom: -5px;
+  }
+  .overview__text {
+    font-weight: 300;
+    font-size: 1.35rem;
+    line-height: 145%;
+  }
+  .overview__btn {
+    padding: 20px 24px !important;
   }
   .swiper-button-prev, .swiper-button-next {
     width: 35px;
@@ -1758,7 +1950,7 @@ body {
     padding: 0 150px;
   }
   .special-feedback .swiper-slide .slide-review {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     line-height: 145%;
   }
   .special-feedback .swiper-slide .slide-name {
@@ -1782,11 +1974,11 @@ body {
   }
   .factories__factory-name {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
   }
   .factories__factory-address {
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
   .factories__factory-route {
     text-align: center;
@@ -1794,6 +1986,7 @@ body {
   }
   .footer {
     text-align: center;
+    padding: 45px 0;
   }
   .footer__links {
     -webkit-box-orient: vertical;
@@ -1828,16 +2021,63 @@ body {
     width: 96%;
     margin-left: 10px;
   }
+  .banner .row {
+    padding: 50px 0;
+    gap: 30px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .banner__title {
+    font-size: 2.85rem;
+  }
+  .banner__text {
+    font-size: 1.5rem;
+  }
+  .banner__text:first-of-type {
+    margin-bottom: 0px;
+  }
+  .banner .promo {
+    padding: 14px 30px 12px 15px;
+    width: 100%;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .banner .promo__title {
+    font-size: 2.17rem;
+  }
+  .banner .promo__desc {
+    font-size: 1.1rem;
+  }
+  .banner .col-xl-4 {
+    padding-left: 15px !important;
+  }
+  .banner .form .btn {
+    font-size: 1.2rem;
+    padding: 0;
+    line-height: 100%;
+  }
+  .banner .form input {
+    font-size: 1.2rem;
+  }
+  .banner .form__text {
+    font-size: 1rem;
+  }
   .instruction {
-    padding: 40px 10px;
+    width: 100% !important;
+  }
+  .instruction .container {
+    padding: 40px 5px;
+  }
+  .instruction .row {
+    margin: 0;
   }
   .instruction__text p {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
   .instruction .btn {
     font-size: 1.12rem;
     margin-top: 20px;
-    width: auto;
+    width: 100% !important;
   }
   .products,
   .advantages {
@@ -1851,63 +2091,106 @@ body {
   .advantages .card__list-item {
     font-size: 1.4rem;
   }
+  .products .card__btns button {
+    padding: 17px 24px;
+    font-size: 1.3rem !important;
+  }
+  .products .card__img {
+    height: 250px;
+  }
+  .products .card__img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .products .card__text {
+    font-size: 1.3rem;
+  }
+  .consulting {
+    background-image: url("../img/consulting-bg-mobile.webp");
+    background-size: cover;
+    background-position: bottom;
+  }
   .consulting .form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    gap: 5px;
+    gap: 10px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     padding: 30px auto;
   }
-  .consulting .form__text {
-    display: none;
-  }
   .consulting .form input {
-    padding: 5px;
+    padding: 10px;
   }
   .consulting .form input::-webkit-input-placeholder {
-    font-size: 0.75rem;
+    font-size: 1.1rem;
   }
   .consulting .form input::-moz-placeholder {
-    font-size: 0.75rem;
+    font-size: 1.1rem;
   }
   .consulting .form input:-ms-input-placeholder {
-    font-size: 0.75rem;
+    font-size: 1.1rem;
   }
   .consulting .form input::-ms-input-placeholder {
-    font-size: 0.75rem;
+    font-size: 1.1rem;
   }
   .consulting .form input::placeholder {
-    font-size: 0.75rem;
+    font-size: 1.1rem;
+  }
+  .consulting .form label[for=consulting__name] {
+    left: 107px;
+    top: 18%;
+  }
+  .consulting .form label[for=consulting__phone] {
+    left: 96px;
+    top: 18%;
   }
   .consulting .form__purpose {
     -ms-grid-column: 1;
     grid-column: 1;
   }
   .consulting .form .btn {
-    padding: 5px 8px;
+    padding: 22px 24px;
     -ms-grid-column: 1;
     grid-column: 1;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    margin-top: 10px;
   }
   .consulting .form__text {
     display: block;
     -ms-grid-column: 1;
     grid-column: 1;
     text-align: left;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 160%;
   }
   .introduction__title {
     text-align: center;
     font-weight: 700;
     margin-bottom: 30px;
   }
+  .introduction .row {
+    margin: 48px 0 50px 0;
+  }
+  .introduction .col-lg-7 {
+    padding: 0;
+  }
+  .introduction .youtube-player {
+    margin: 0;
+  }
+  .introduction__title {
+    font-size: 2.5rem;
+  }
   .introduction__label {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   .introduction__mission {
+    font-size: 1.5rem;
+  }
+  .introduction__button {
     font-size: 1.4rem;
   }
   .documents .wrapper {
@@ -1921,7 +2204,14 @@ body {
     height: 352px;
   }
   .swiper {
-    padding-bottom: 5% !important;
+    padding-bottom: 10% !important;
+  }
+  .swiper-button-prev, .swiper-button-next {
+    width: 25px;
+    height: 25px;
+  }
+  .feedback {
+    width: 100%;
   }
   .feedback__slider {
     padding: 40px 0px !important;
@@ -1937,31 +2227,77 @@ body {
     padding: 0 75px;
   }
   .special-feedback .swiper-slide .slide-review {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
   .special-feedback .swiper-slide .slide-name {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
   .special-feedback .swiper-slide img {
     width: 25vw;
     height: 25vw;
   }
+  .factories__header {
+    padding: 0 10px;
+  }
   .factories__title {
-    font-size: 2.1rem;
+    font-size: 2.6rem;
   }
   .factories__text {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
   .factories__phone {
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
 }
 @media screen and (max-width: 430px) {
+  .instruction .row {
+    margin: 0;
+  }
+  .instruction .btn {
+    width: 90% !important;
+  }
+  .instruction .col-12 {
+    padding: 0;
+  }
+  .instruction__text p {
+    font-size: 1.7rem;
+  }
+  .products .card__img {
+    height: 200px;
+  }
+  .products .card__img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
   .consulting__text {
     font-size: 1.3rem;
   }
+  .introduction .container {
+    padding: 0;
+  }
+  .introduction .col-lg-5 {
+    padding: 0 10px;
+  }
+  .introduction__title {
+    font-size: 2.3rem;
+  }
+  .introduction__label {
+    font-size: 1.2rem;
+  }
+  .introduction__mission {
+    font-size: 1.4rem;
+  }
+  .introduction__button {
+    font-size: 1.2rem !important;
+  }
   .advantages .card {
     padding: 50px 30px;
+  }
+  .advantages .card__img img {
+    width: 88px;
+    height: 88px;
   }
   .documents .wrapper {
     padding: 60px 10px 60px 10px;
@@ -1979,38 +2315,128 @@ body {
     width: 46vw;
     height: 50vh;
   }
+  .special-feedback .row {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .special-feedback .swiper-slide {
-    padding: 0 75px;
+    padding: 0 45px;
   }
   .special-feedback .swiper-slide .slide-review {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    line-height: 24px;
   }
   .special-feedback .swiper-slide .slide-name {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
   .special-feedback .swiper-slide img {
     width: 35vw;
     height: 35vw;
   }
+  .special-feedback .swiper-button-prev {
+    margin-left: -10px !important;
+  }
+  .special-feedback .swiper-button-next {
+    margin-right: -10px !important;
+  }
   .factories__text {
-    font-size: 0.9rem;
+    font-size: 1.6rem;
   }
   .factories__phone {
-    font-size: 0.9rem;
+    font-size: 2rem;
   }
 }
 @media screen and (max-width: 370px) {
+  .advantages .card {
+    padding: 50px 24px;
+  }
+  .advantages .card__body {
+    padding: 0;
+  }
+  .advantages .row {
+    gap: 14px;
+  }
   .advantages__title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
+  }
+  .banner__form {
+    padding: 30px 15px;
+  }
+  .banner__form .form__text {
+    font-size: 1.15rem;
+  }
+  .banner__form .btn {
+    padding: 17px 24px !important;
+  }
+  .instruction__text p {
+    font-size: 1.84rem;
+  }
+  .instruction .btn {
+    padding: 19px 24px !important;
+    font-size: 1.5rem !important;
+  }
+  .overview .btn {
+    padding: 19px 20px !important;
+    font-size: 1.2rem !important;
+  }
+  .overview__title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 35px;
+  }
+  .consulting {
+    padding: 56px 10px;
   }
   .consulting .form .btn {
-    font-size: 0.6rem;
+    font-size: 1.3rem;
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+  .consulting .form input::-webkit-input-placeholder {
+    font-size: 1.2rem;
+  }
+  .consulting .form input::-moz-placeholder {
+    font-size: 1.2rem;
+  }
+  .consulting .form input:-ms-input-placeholder {
+    font-size: 1.2rem;
+  }
+  .consulting .form input::-ms-input-placeholder {
+    font-size: 1.2rem;
+  }
+  .consulting .form input::placeholder {
+    font-size: 1.2rem;
+  }
+  .consulting .form {
+    padding: 30px 10px;
+  }
+  .consulting .form label[for=consulting__name] {
+    left: 114px;
+    top: 20%;
+    font-size: 1.2rem;
+  }
+  .consulting .form label[for=consulting__phone] {
+    left: 104px;
+    top: 20%;
+    font-size: 1.2rem;
   }
   .consulting__title {
+    font-size: 2.5rem;
+  }
+  .consulting__text {
     font-size: 1.8rem;
   }
+  .documents .wrapper {
+    padding: 25px 10px;
+  }
+  .documents .row {
+    gap: 5px;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
   .documents__img {
-    width: 140px;
+    width: 120px;
     height: 197px;
   }
   .feedback .swiper-horizontal > .swiper-pagination-bullets,
@@ -2019,14 +2445,47 @@ body {
   .feedback .swiper-pagination-fraction {
     bottom: -5px !important;
   }
+  .feedback__title {
+    padding: 0 20px;
+  }
   .special-feedback {
-    padding: 50px 10px;
+    padding: 50px 20px;
+  }
+  .factories__addresses {
+    gap: 30px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .factories__factory {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .factories__factory-route {
+    margin-top: 0;
   }
   .factories__text {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   .factories__phone {
-    font-size: 1.2rem;
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 210px) {
+  .advantages__card {
+    padding: 32px 12px !important;
+  }
+  .consulting .form .form__control {
+    width: 100px !important;
+  }
+  .special-feedback .row {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .special-feedback__title {
+    font-size: 1.5rem;
   }
 }
 @media screen and (min-height: 854px) and (min-width: 768px) {

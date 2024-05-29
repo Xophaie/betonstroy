@@ -90,6 +90,7 @@
 
 			&:hover {
 				color: $orange;
+				text-decoration: none;
 			}
 		}
 	}
@@ -152,7 +153,7 @@
 
 	&-button-prev:hover,
 	&-button-next:hover {
-		background-color: $orange;
+		background-color: $orange !important;
 		cursor: pointer;
 	}
 }
@@ -171,11 +172,13 @@
 		font-weight: 700;
 		line-height: 120%;
 		font-size: 1.8rem;
+		margin: 0;
 	}
 
 	&__desc {
 		font-size: 0.8rem;
 		font-weight: 300;
+		margin: 0;
 	}
 }
 

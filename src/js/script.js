@@ -1,6 +1,15 @@
 $(document).ready(function () {
 	$(".navbar-toggler").on("click", function () {
 		$("body").toggleClass("modal-open");
+		// $(".navigation").toggleClass("show");
+	});
+
+	$(".consulting .form__control input").on("input", function (e) {
+		if (e.target.value !== "") {
+			$(this).siblings("label").addClass("d-none");
+		} else {
+			$(this).siblings("label").removeClass("d-none");
+		}
 	});
 
 	// Cleave
@@ -13,27 +22,6 @@ $(document).ready(function () {
 				phoneRegionCode: "ru",
 			});
 		});
-
-	// Документы
-
-	$("div.documents__item").on("click", function (e) {
-		e.stopPropagation();
-
-		if (e.target.classList.contains("zoom")) {
-			$(this).removeClass("zoom");
-			$(this).children(".documents__img").removeClass("scale");
-			$("body").removeClass("modal-open");
-		} else {
-			$(this).addClass("zoom");
-			$("body").addClass("modal-open");
-		}
-	});
-
-	$(".documents__img").on("click", function (e) {
-		if (e.target.parentElement.classList.contains("zoom")) {
-			e.target.classList.toggle("scale");
-		}
-	});
 
 	// Обзор
 	const overviewSwiper = new Swiper(".overview__swiper", {
@@ -52,34 +40,46 @@ $(document).ready(function () {
 
 	// Отзывы
 	// Переключение двух видов слайдеров в зависимости от ширины экрана
-	// Вид слайдера определяется только по инициализации. Смена видов не происходит динамически при изменении ширины экрана в инструментах разработчика-
-	if (window.matchMedia("(min-width: 769px)").matches) {
-		const feedbackSwiper = new Swiper(".feedback__swiper", {
-			direction: "horizontal",
-			loop: true,
-			slidesPerView: 3,
 
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
-			},
-		});
-	} else {
-		const feedbackSwiper = new Swiper(".feedback__swiper", {
-			direction: "horizontal",
-			loop: true,
-			slidesPerView: 1,
+	const feedbackSwiper = new Swiper(".feedback__swiper", {
+		direction: "horizontal",
+		loop: true,
+		slidesPerView: 1,
 
-			pagination: {
-				el: ".swiper-pagination",
-			},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
 
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
+		pagination: {
+			el: ".swiper-pagination",
+		},
+
+		breakpoints: {
+			769: {
+				slidesPerView: 3,
 			},
-		});
-	}
+		},
+	});
+
+	console.log(feedbackSwiper);
+
+	$().fancybox({
+		selector: '[data-fancybox="images"]',
+		hash: true,
+		animationEffect: "fade",
+	});
+
+	// $(window).on("resize", function () {
+	// 	if (window.matchMedia("(min-width: 769px)").matches) {
+	// 		feedbackSwiper.slidesPerView = 3;
+	// 	} else {
+	// 		feedbackSwiper.slidesPerView = 1;
+	// 		feedbackSwiper.pagination = {
+	// 			el: ".swiper-pagination",
+	// 		};
+	// 	}
+	// });
 
 	// Специальные отзывы
 	const specialFeedbackSwiper = new Swiper(".special-feedback__swiper", {
