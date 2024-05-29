@@ -348,6 +348,7 @@
 	}
 
 	.navbar {
+		overflow-x: hidden;
 		& .dropdown-divider {
 			display: block !important;
 			margin: 5px 0;
@@ -355,6 +356,12 @@
 
 		.dropdown-menu {
 			border: none;
+		}
+
+		.header-divider {
+			// width: 99vw;
+			width: 100vw;
+			margin-left: -15px;
 		}
 
 		.dropdown-toggle {

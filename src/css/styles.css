@@ -1484,12 +1484,19 @@ body {
   html {
     font-size: 12px;
   }
+  .navbar {
+    overflow-x: hidden;
+  }
   .navbar .dropdown-divider {
     display: block !important;
     margin: 5px 0;
   }
   .navbar .dropdown-menu {
     border: none;
+  }
+  .navbar .header-divider {
+    width: 100vw;
+    margin-left: -15px;
   }
   .navbar .dropdown-toggle {
     position: relative;
